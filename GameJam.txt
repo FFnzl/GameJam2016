@@ -1,0 +1,35 @@
+grey
+	schwarz/weiß
+	grau
+	depressiv
+	name?
+	farbwechsel?
+	
+	grauer winter -> spring
+	FARBEN
+	
+	
+
+spring
+	steampunk
+	sprungfeder
+	brunnen
+	frühling
+	springen?
+	spross
+
+
+grey spring
+
+genres
+	plattformer?
+	stratiegie
+	adventure
+	rpg
+	simulation
+	exploration(metroidvania)
+	shmup
+	egoshooter?
+	racer
+	sports
+	puzzle!
