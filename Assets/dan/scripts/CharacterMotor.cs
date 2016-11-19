@@ -5,6 +5,9 @@ public class CharacterMotor : MonoBehaviour {
 	[SerializeField]
 	private float _moveSpeed;
 
+	[SerializeField]
+	private float _accelaration;
+
 	private Rigidbody2D _rigidBody;
 
 	private void Start () {
@@ -12,7 +15,11 @@ public class CharacterMotor : MonoBehaviour {
 	}
 
 	private void Update () {
-		_rigidBody.velocity = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * _moveSpeed * Time.deltaTime;
+		//_rigidBody.velocity = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * _moveSpeed * Time.deltaTime;
+
+		if (_rigidBody.velocity.magnitude < _moveSpeed) {
+			_rigidBody.AddForce(new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized * _accelaration);
+		}
 
 		Camera cam = Camera.main;
 		float camDis = cam.transform.position.y - transform.position.y;

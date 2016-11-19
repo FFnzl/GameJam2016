@@ -38,7 +38,7 @@ GameObject:
   - 50: {fileID: 50000013311091206}
   - 233: {fileID: 233000012681566060}
   - 58: {fileID: 58000010329676888}
-  - 232: {fileID: 232000013088027980}
+  - 232: {fileID: 232000011180095374}
   m_Layer: 9
   m_Name: Pipe 3
   m_TagString: Untagged
@@ -58,7 +58,7 @@ GameObject:
   - 50: {fileID: 50000013512004446}
   - 233: {fileID: 233000012252491872}
   - 58: {fileID: 58000014125911056}
-  - 232: {fileID: 232000014229456734}
+  - 232: {fileID: 232000013828903292}
   m_Layer: 9
   m_Name: Pipe 5
   m_TagString: Untagged
@@ -112,7 +112,7 @@ GameObject:
   - 50: {fileID: 50000012696971522}
   - 233: {fileID: 233000011267570762}
   - 58: {fileID: 58000013350286400}
-  - 232: {fileID: 232000013246853284}
+  - 232: {fileID: 232000012359147690}
   m_Layer: 9
   m_Name: Pipe 1
   m_TagString: Untagged
@@ -132,7 +132,7 @@ GameObject:
   - 50: {fileID: 50000010488714974}
   - 233: {fileID: 233000011370264580}
   - 58: {fileID: 58000012553570692}
-  - 232: {fileID: 232000011322232236}
+  - 232: {fileID: 232000010437759450}
   m_Layer: 9
   m_Name: Pipe 4
   m_TagString: Untagged
@@ -153,8 +153,8 @@ GameObject:
   - 233: {fileID: 233000013986030832}
   - 61: {fileID: 61000012144936568}
   - 114: {fileID: 114000011462073548}
-  - 232: {fileID: 232000011449900466}
-  - 232: {fileID: 232000012452310414}
+  - 232: {fileID: 232000011688469036}
+  - 232: {fileID: 232000010676901654}
   m_Layer: 9
   m_Name: Vacuum
   m_TagString: Untagged
@@ -190,7 +190,7 @@ GameObject:
   - 50: {fileID: 50000013778442516}
   - 233: {fileID: 233000010634106724}
   - 58: {fileID: 58000013143805744}
-  - 232: {fileID: 232000012437437548}
+  - 232: {fileID: 232000011574120430}
   m_Layer: 9
   m_Name: Pipe 2
   m_TagString: Untagged
@@ -485,15 +485,15 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000014177168116}
   m_UseAutoMass: 0
-  m_Mass: 75
-  m_LinearDrag: 0
+  m_Mass: 10
+  m_LinearDrag: 4
   m_AngularDrag: 0.05
   m_GravityScale: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 0
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!50 &50000012696971522
 Rigidbody2D:
   serializedVersion: 2
@@ -520,7 +520,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 1000011327135384}
   m_UseAutoMass: 0
   m_Mass: 5
-  m_LinearDrag: 2
+  m_LinearDrag: 4
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_IsKinematic: 0
@@ -742,6 +742,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveSpeed: 100
+  _accelaration: 100
 --- !u!114 &114000011462073548
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -754,9 +755,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _minRumbleForce: 50
-  _maxRumbleForce: 150
+  _maxRumbleForce: 100
   _minRumbleDelay: 0.01
-  _maxRumbleDelay: 0.05
+  _maxRumbleDelay: 0.03
 --- !u!114 &114000013644616956
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -769,6 +770,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _centerSuckForce: 10
+  _backwardSuckForceMultiplier: 0.1
 --- !u!212 &212000010056564512
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -1099,7 +1101,7 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
---- !u!232 &232000011322232236
+--- !u!232 &232000010437759450
 DistanceJoint2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1117,43 +1119,7 @@ DistanceJoint2D:
   m_AutoConfigureDistance: 1
   m_Distance: 0.13500002
   m_MaxDistanceOnly: 1
---- !u!232 &232000011449900466
-DistanceJoint2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011327135384}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_EnableCollision: 1
-  m_ConnectedRigidBody: {fileID: 50000012480769952}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 0
-  m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0, y: 0}
-  m_AutoConfigureDistance: 1
-  m_Distance: 0.8165323
-  m_MaxDistanceOnly: 1
---- !u!232 &232000012437437548
-DistanceJoint2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011713873012}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_EnableCollision: 1
-  m_ConnectedRigidBody: {fileID: 50000012696971522}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 0
-  m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0, y: 0}
-  m_AutoConfigureDistance: 1
-  m_Distance: 0.135
-  m_MaxDistanceOnly: 1
---- !u!232 &232000012452310414
+--- !u!232 &232000010676901654
 DistanceJoint2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1171,7 +1137,7 @@ DistanceJoint2D:
   m_AutoConfigureDistance: 1
   m_Distance: 0.13499999
   m_MaxDistanceOnly: 1
---- !u!232 &232000013088027980
+--- !u!232 &232000011180095374
 DistanceJoint2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1189,7 +1155,43 @@ DistanceJoint2D:
   m_AutoConfigureDistance: 1
   m_Distance: 0.13499999
   m_MaxDistanceOnly: 1
---- !u!232 &232000013246853284
+--- !u!232 &232000011574120430
+DistanceJoint2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011713873012}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 1
+  m_ConnectedRigidBody: {fileID: 50000012696971522}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0, y: 0}
+  m_AutoConfigureDistance: 1
+  m_Distance: 0.135
+  m_MaxDistanceOnly: 1
+--- !u!232 &232000011688469036
+DistanceJoint2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011327135384}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 1
+  m_ConnectedRigidBody: {fileID: 50000012480769952}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0, y: 0}
+  m_AutoConfigureDistance: 0
+  m_Distance: 0.8
+  m_MaxDistanceOnly: 1
+--- !u!232 &232000012359147690
 DistanceJoint2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1202,12 +1204,12 @@ DistanceJoint2D:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 0
-  m_Anchor: {x: 0, y: -0.00000000422728}
+  m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
   m_Distance: 0.14866069
   m_MaxDistanceOnly: 1
---- !u!232 &232000014229456734
+--- !u!232 &232000013828903292
 DistanceJoint2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
