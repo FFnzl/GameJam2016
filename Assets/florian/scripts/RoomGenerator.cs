@@ -65,11 +65,11 @@ public class RoomGenerator : MonoBehaviour {
 
     void GenerateRooms()
     {
-        int s = (numberOfRooms * 2) + 1;
-        bool[,] grid = new bool[s, s];
-        map = new GameObject[s, s];
+        int s = (numberOfRooms * 4);
+        bool[,] grid = new bool[s+1, s+1];
+        map = new GameObject[s+1, s+1];
 
-        Vector2 lr = new Vector2(numberOfRooms + 1, numberOfRooms + 1);
+        Vector2 lr = new Vector2((s/2), (s/2));
         grid[(int)lr.x, (int)lr.y] = true;
 
         int reqRooms = numberOfRooms;
@@ -157,8 +157,8 @@ public class RoomGenerator : MonoBehaviour {
                             break;
                     }
 
-                    float locX = x - (numberOfRooms + 1);
-                    float locY = y - (numberOfRooms + 1);
+                    float locX = x - (s/2);
+                    float locY = y - (s/2);
 
                     GameObject o = Instantiate(room) as GameObject;
                     o.transform.localPosition = new Vector3(locX, locY);

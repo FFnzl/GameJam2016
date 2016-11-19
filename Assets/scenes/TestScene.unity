@@ -224,12 +224,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 114000013238588724, guid: f422bb1809af7b847a62c9ddd751a24d,
-        type: 2}
-      propertyPath: floors.Array.data[6]
-      value: 
-      objectReference: {fileID: 1000010083847378, guid: 4465a64d4a6a74d4b8ad48df41ad0e83,
-        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f422bb1809af7b847a62c9ddd751a24d, type: 2}
   m_IsPrefabParent: 0
@@ -283,7 +277,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -410,7 +404,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorPrefab: {fileID: 1000012677876980, guid: 40c6dfb81eee9c44a851c845fccd777b, type: 2}
-  scale: {x: 3, y: 3}
+  scale: {x: 2.5, y: 2.5}
   oneEntryRooms:
   - {fileID: 1000012268905602, guid: 1d2382b7f219fcb4e9869ca31215b2d9, type: 2}
   twoEntryRoomsL:
@@ -421,7 +415,7 @@ MonoBehaviour:
   - {fileID: 1000012132681974, guid: 46b62c49dbccd6b43b62e8f4a34470d4, type: 2}
   fourEntryRooms:
   - {fileID: 1000010540114404, guid: 8fa7f27b8bc6d3b49be27dbe28ef9d30, type: 2}
-  numberOfRooms: 10
+  numberOfRooms: 1
 --- !u!4 &1867600416
 Transform:
   m_ObjectHideFlags: 0

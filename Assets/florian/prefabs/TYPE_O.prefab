@@ -164,6 +164,7 @@ GameObject:
   - 212: {fileID: 212000012867610936}
   - 114: {fileID: 114000012343542426}
   - 114: {fileID: 114000013205406656}
+  - 114: {fileID: 114000010272387502}
   m_Layer: 0
   m_Name: TYPE_O
   m_TagString: Untagged
@@ -619,6 +620,21 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 0.99999994, y: 0.99999994}
+--- !u!114 &114000010272387502
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012268905602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cae9506052620744a9085268827cbb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dustPrefab: {fileID: 1000012472368056, guid: 9bccc71985cbe204690a20048e3a3f35,
+    type: 2}
+  _placeRadius: 0.5
+  _dustCount: 50
 --- !u!114 &114000012343542426
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -632,6 +648,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   doors: []
+  dust: []
+  tiles: []
 --- !u!114 &114000013205406656
 MonoBehaviour:
   m_ObjectHideFlags: 1

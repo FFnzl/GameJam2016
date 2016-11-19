@@ -12,7 +12,9 @@ public class FloorController : MonoBehaviour {
     void Start() {
 
         FloorComponents fc = GameObject.FindGameObjectWithTag("FloorManager").GetComponent<FloorComponents>();
-        
+        Room r = GetComponent<Room>();
+
+
         string randPattern = fc.floorPattern[Random.Range(0, fc.floorPattern.Length)];
 
         string[] pattern = randPattern.Split(',');
@@ -23,11 +25,8 @@ public class FloorController : MonoBehaviour {
             o.transform.parent = transform;
             o.transform.localPosition = new Vector3((((i % 10) - 5) * 0.1f) + 0.05f, (((i / 10) - 5) * -0.1f) - 0.05f);
             o.transform.localScale = new Vector3(1, 1);
+
+            r.tiles.Add(o);
         }
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
 	}
 }

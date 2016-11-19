@@ -8,10 +8,30 @@ public class Room : MonoBehaviour {
     public RoomType type;
 
     public List<GameObject> doors;
+    public List<GameObject> dust;
+    public List<GameObject> tiles;
 
-    void Start()
+    void Awake()
     {
         doors = new List<GameObject>();
+        tiles = new List<GameObject>();
+        dust = new List<GameObject>();
+    }
+
+    void Update()
+    {
+        float dustInPercent = 0f;
+
+        foreach(GameObject d in dust)
+        {
+            if (d != null) dustInPercent += 1;
+        }
+
+        dustInPercent /= dust.Count;
+        tiles.ForEach((x) => {
+            SpriteRenderer sr = x.GetComponent<SpriteRenderer>();
+            sr.color = Color.HSVToRGB(0, 0, ((1f - dustInPercent) * 0.5f) + 0.5f);
+        });
     }
     
 }

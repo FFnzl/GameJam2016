@@ -196,6 +196,7 @@ GameObject:
   - 212: {fileID: 212000010041454426}
   - 114: {fileID: 114000014159266102}
   - 114: {fileID: 114000013158153816}
+  - 114: {fileID: 114000014049896298}
   m_Layer: 0
   m_Name: TYPE_T
   m_TagString: Untagged
@@ -836,6 +837,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3db9fefa180b8e147895ce5ffc26f89c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114000014049896298
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012132681974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cae9506052620744a9085268827cbb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dustPrefab: {fileID: 1000012472368056, guid: 9bccc71985cbe204690a20048e3a3f35,
+    type: 2}
+  _placeRadius: 0.5
+  _dustCount: 50
 --- !u!114 &114000014159266102
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -849,6 +865,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 3
   doors: []
+  dust: []
+  tiles: []
 --- !u!212 &212000010041454426
 SpriteRenderer:
   m_ObjectHideFlags: 1

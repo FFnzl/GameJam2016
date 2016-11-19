@@ -982,8 +982,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dustPrefab: {fileID: 1000012472368056, guid: 9bccc71985cbe204690a20048e3a3f35,
     type: 2}
-  _placeRadius: 2
-  _dustCount: 20
+  _placeRadius: 0.5
+  _dustCount: 50
 --- !u!114 &114000012353941534
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -997,6 +997,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 4
   doors: []
+  dust: []
+  tiles: []
 --- !u!212 &212000010026692048
 SpriteRenderer:
   m_ObjectHideFlags: 1
