@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Dust
   - FloorManager
+  - Plug
+  - Socket
   layers:
   - Default
   - TransparentFX
