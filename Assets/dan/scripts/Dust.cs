@@ -8,6 +8,10 @@ public class Dust : MonoBehaviour {
 		_suckDust = FindObjectOfType<SuckDust>();
 	}
 
+	private void Update () {
+		//TODO Enforce maximum velocity
+	}
+
 	private void OnDestroy () {
 		_suckDust.RemoveDust(gameObject);
 	}
