@@ -16,17 +16,27 @@ public class VacuumRumble : MonoBehaviour {
 
 	private Rigidbody2D _rigidbody;
 	private float _rumbleTimer;
+	private Plug _plug;
+	private bool _sucking;
 
 	private void Start () {
 		_rigidbody = GetComponent<Rigidbody2D>();
-
+		_plug = FindObjectOfType<Plug>();
 		_rumbleTimer = 0.0f;
 	}
 
 	private void Update () {
-		if (Input.GetMouseButton(0) && _rumbleTimer - Time.time <= 0.0f) {
+		_sucking = Input.GetMouseButton(0) && _rumbleTimer - Time.time <= 0.0f && _plug.Connected;
+		
+		if (_sucking) {
 			_rumbleTimer = Random.Range(_minRumbleDelay, _maxRumbleDelay) + Time.time;
+		}
+	}
+
+	private void FixedUpdate () {
+		if (_sucking) {
 			_rigidbody.AddForce(Random.insideUnitCircle * Random.Range(_minRumbleForce, _maxRumbleForce));
 		}
+		
 	}
 }

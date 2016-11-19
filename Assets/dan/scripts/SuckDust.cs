@@ -13,18 +13,25 @@ public class SuckDust : MonoBehaviour {
 
 	private CircleCollider2D _collider;
 
+	private Plug _plug;
+
+	private bool _sucking;
+
 	private void Awake () {
 		_suckableDust = new List<GameObject>();
 	}
 
 	private void Start () {
 		_collider = GetComponent<CircleCollider2D>();
+		_plug = FindObjectOfType<Plug>();
 	}
 
 	private void Update () {
-		if (Input.GetMouseButton(0)) {
-			//TODO Scale suckforce with distance
+		_sucking = Input.GetMouseButton(0) && _plug.Connected;
+	}
 
+	private void FixedUpdate () {
+		if (_sucking) {
 			foreach (GameObject dust in _suckableDust) {
 				//TODO This is super hacky (sometimes dust can be null after beeing destroyed [not removed from list])
 				if (dust != null) {

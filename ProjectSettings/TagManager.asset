@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Dust
+  - Plug
+  - Socket
   layers:
   - Default
   - TransparentFX
