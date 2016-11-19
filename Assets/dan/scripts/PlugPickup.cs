@@ -14,7 +14,7 @@ public class PlugPickup : MonoBehaviour {
 	}
 
 	private void Update () {
-		if (Input.GetKeyDown(KeyCode.E)) {
+		if (Input.GetButtonDown("Interact")) {
 			if (Vector2.Distance(transform.position, _plug.transform.position) <= _plugPickupDistance && !_carryingPlug) {
 				_plug.PickUp();
 				_carryingPlug = true;
