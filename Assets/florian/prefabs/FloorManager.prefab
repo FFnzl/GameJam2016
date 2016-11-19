@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1000010756733230}
+  m_IsPrefabParent: 1
+--- !u!1 &1000010756733230
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000014029127576}
+  - 114: {fileID: 114000013238588724}
+  m_Layer: 0
+  m_Name: FloorManager
+  m_TagString: FloorManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4000014029127576
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010756733230}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.076741554, y: 13.840352, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &114000013238588724
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010756733230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e0a98b349aae9442a70c5a2b43e7254, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floorPattern:
+  - '3,3,3,3,3,3,3,3,3,3,3,5,5,3,5,5,3,5,5,3,3,5,3,5,5,5,5,3,5,3,3,3,5,4,4,4,4,5,3,3,3,5,5,4,4,4,4,5,5,3,3,5,5,4,4,4,4,5,5,3,3,3,5,4,4,4,4,5,3,3,3,5,3,5,5,5,5,3,5,3,3,5,5,3,5,5,3,5,5,3,3,3,3,3,3,3,3,3,3,3 '
+  - '1,1,1,1,1,1,1,1,1,1,1,0,0,1,0,0,1,0,0,1,1,0,1,0,0,0,0,1,0,1,1,1,0,2,2,2,2,0,1,1,1,0,0,2,2,2,2,0,0,1,1,0,0,2,2,2,2,0,0,1,1,1,0,2,2,2,2,0,1,1,1,0,1,0,0,0,0,1,0,1,1,0,0,1,0,0,1,0,0,1,1,1,1,1,1,1,1,1,1,1  '
+  - 6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6
+  floors:
+  - {fileID: 1000012383865546, guid: 65737a44c82b7e646a102563f78e95ef, type: 2}
+  - {fileID: 1000012537481662, guid: 6b4a3cbcd33fd0145b767ea25fc3bfe3, type: 2}
+  - {fileID: 1000011674701228, guid: e9d8c074f61d2df4ba73fa9805b8d58f, type: 2}
+  - {fileID: 1000011729997274, guid: d409ab3574c94aa48a38c734d9a9b783, type: 2}
+  - {fileID: 1000010497648892, guid: c5604cfc0e2b8624bbe20bf206b240c5, type: 2}
+  - {fileID: 1000010608269494, guid: 4532176cdd270dd479cd4896b25f8787, type: 2}
+  - {fileID: 1000014162086762, guid: 5bdbdb05fd8e3454bb8a395c0fdaf844, type: 2}
