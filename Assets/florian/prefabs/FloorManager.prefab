@@ -34,7 +34,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010756733230}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.076741554, y: 13.840352, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -56,10 +56,12 @@ MonoBehaviour:
   - '1,1,1,1,1,1,1,1,1,1,1,0,0,1,0,0,1,0,0,1,1,0,1,0,0,0,0,1,0,1,1,1,0,2,2,2,2,0,1,1,1,0,0,2,2,2,2,0,0,1,1,0,0,2,2,2,2,0,0,1,1,1,0,2,2,2,2,0,1,1,1,0,1,0,0,0,0,1,0,1,1,0,0,1,0,0,1,0,0,1,1,1,1,1,1,1,1,1,1,1  '
   - 6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6
   floors:
-  - {fileID: 1000012383865546, guid: 65737a44c82b7e646a102563f78e95ef, type: 2}
-  - {fileID: 1000012537481662, guid: 6b4a3cbcd33fd0145b767ea25fc3bfe3, type: 2}
-  - {fileID: 1000011674701228, guid: e9d8c074f61d2df4ba73fa9805b8d58f, type: 2}
-  - {fileID: 1000011729997274, guid: d409ab3574c94aa48a38c734d9a9b783, type: 2}
-  - {fileID: 1000010497648892, guid: c5604cfc0e2b8624bbe20bf206b240c5, type: 2}
-  - {fileID: 1000010608269494, guid: 4532176cdd270dd479cd4896b25f8787, type: 2}
-  - {fileID: 1000010083847378, guid: 4465a64d4a6a74d4b8ad48df41ad0e83, type: 2}
+  - {fileID: 21300000, guid: 04fcd653633d1aa47a6e6d6614ae2921, type: 3}
+  - {fileID: 21300002, guid: 04fcd653633d1aa47a6e6d6614ae2921, type: 3}
+  - {fileID: 21300004, guid: 04fcd653633d1aa47a6e6d6614ae2921, type: 3}
+  - {fileID: 21300006, guid: 04fcd653633d1aa47a6e6d6614ae2921, type: 3}
+  - {fileID: 21300008, guid: 04fcd653633d1aa47a6e6d6614ae2921, type: 3}
+  - {fileID: 21300010, guid: 04fcd653633d1aa47a6e6d6614ae2921, type: 3}
+  - {fileID: 21300036, guid: 04fcd653633d1aa47a6e6d6614ae2921, type: 3}
+  floorPrefab: {fileID: 1000013636115838, guid: e8c051fdb9cef8540bb3b47768f8f7ae,
+    type: 2}

@@ -8,6 +8,7 @@ TagManager:
   - FloorManager
   - Plug
   - Socket
+  - JunkManager
   layers:
   - Default
   - TransparentFX
