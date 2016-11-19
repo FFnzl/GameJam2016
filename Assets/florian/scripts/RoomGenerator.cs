@@ -3,6 +3,8 @@ using System.Collections;
 
 public class RoomGenerator : MonoBehaviour {
 
+    public GameObject doorPrefab;
+
     public GameObject[] oneEntryRooms;
     public GameObject[] twoEntryRoomsL;
     public GameObject[] twoEntryRoomsD;
@@ -11,12 +13,16 @@ public class RoomGenerator : MonoBehaviour {
 
     public int numberOfRooms;
 
+    public GameObject[,] map;
+
 
 
 	// Use this for initialization
 	void Start () {
         GenerateRooms();
 	}
+
+    #region Utility 
 
     private int countRooms(bool[,] grid, int x, int y)
     {
@@ -53,10 +59,13 @@ public class RoomGenerator : MonoBehaviour {
         return grid[x - 1, y] ? 90 : grid[x, y - 1] ? 180 : grid[x + 1, y] ? 270 : 0;
     }
 
+    #endregion
+
     void GenerateRooms()
     {
         int s = (numberOfRooms * 2) + 1;
         bool[,] grid = new bool[s, s];
+        map = new GameObject[s, s];
 
         Vector2 lr = new Vector2(numberOfRooms + 1, numberOfRooms + 1);
         grid[(int)lr.x, (int)lr.y] = true;
@@ -146,10 +155,36 @@ public class RoomGenerator : MonoBehaviour {
                             break;
                     }
 
+                    float locX = x - (numberOfRooms + 1);
+                    float locY = y - (numberOfRooms + 1);
+
                     GameObject o = Instantiate(room) as GameObject;
-                    o.transform.localPosition = new Vector3(x - (numberOfRooms + 1), y - (numberOfRooms + 1));
+                    o.transform.localPosition = new Vector3(locX, locY);
                     o.transform.Rotate(new Vector3(0,0,rotation));
                     o.transform.parent = transform;
+
+                    GameObject door = null;
+
+                    if (grid[x - 1, y])
+                    {
+                        door = Instantiate(doorPrefab) as GameObject;
+                        door.transform.parent = transform;
+                        door.transform.localPosition = new Vector3(-0.5f + locX, 0.1f + locY, 0);
+                        door.transform.Rotate(0, 0, -90);
+                    }
+                    o.GetComponent<Room>().doors.Add(door);
+                    if (map[x - 1, y] != null) map[x - 1, y].GetComponent<Room>().doors.Add(door);
+
+                    if (grid[x, y -1])
+                    {
+                        door = Instantiate(doorPrefab) as GameObject;
+                        door.transform.parent = transform;
+                        door.transform.localPosition = new Vector3(-0.1f + locX, -0.5f + locY, 0);
+                    }
+                    o.GetComponent<Room>().doors.Add(door);
+                    if (map[x, y - 1] != null) map[x, y - 1].GetComponent<Room>().doors.Add(door);
+
+                    map[x, y] = o;
                 }
             }
         }
