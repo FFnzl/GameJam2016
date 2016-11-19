@@ -14,13 +14,17 @@ public class Plug : MonoBehaviour {
 	private Socket _currentSocket;
 	private bool _onSocket;
 	private Socket _touchingSocket;
+	private VacuumSounds _sounds;
 
 	private void Start () {
 		Body = GetComponent<Rigidbody2D>();
 
 		DistanceJoint = GetComponent<DistanceJoint2D>();
 		HingeJoint = GetComponent<HingeJoint2D>();
+
+		_sounds = FindObjectOfType<VacuumSounds>();
 	}
+
 
 	public void PickUp () {
 		if (Connected) {
@@ -38,11 +42,15 @@ public class Plug : MonoBehaviour {
 		_touchingSocket.ConnectPlug(this);
 		_currentSocket = _touchingSocket;
 		Connected = true;
+
+		_sounds.ConnectedPlug();
 	}
 
 	public void Disconnect () {
 		_currentSocket = null;
 		Connected = false;
+
+		_sounds.DisconnectedPlug();
 	}
 
 	private void OnTriggerEnter2D (Collider2D pOther) {

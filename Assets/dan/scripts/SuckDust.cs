@@ -15,8 +15,6 @@ public class SuckDust : MonoBehaviour {
 
 	private Plug _plug;
 
-	private bool _sucking;
-
 	private void Awake () {
 		_suckableDust = new List<GameObject>();
 	}
@@ -26,12 +24,9 @@ public class SuckDust : MonoBehaviour {
 		_plug = FindObjectOfType<Plug>();
 	}
 
-	private void Update () {
-		_sucking = Input.GetMouseButton(0) && _plug.Connected;
-	}
 
 	private void FixedUpdate () {
-		if (_sucking) {
+		if (_plug.Connected) {
 			foreach (GameObject dust in _suckableDust) {
 				//TODO This is super hacky (sometimes dust can be null after beeing destroyed [not removed from list])
 				if (dust != null) {

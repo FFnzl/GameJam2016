@@ -26,7 +26,7 @@ public class VacuumRumble : MonoBehaviour {
 	}
 
 	private void Update () {
-		_sucking = Input.GetMouseButton(0) && _rumbleTimer - Time.time <= 0.0f && _plug.Connected;
+		_sucking = _rumbleTimer - Time.time <= 0.0f && _plug.Connected;
 		
 		if (_sucking) {
 			_rumbleTimer = Random.Range(_minRumbleDelay, _maxRumbleDelay) + Time.time;

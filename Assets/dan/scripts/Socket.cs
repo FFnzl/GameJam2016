@@ -22,6 +22,7 @@ public class Socket : MonoBehaviour {
 			pPlug.Body.rotation = _plugPosition.rotation.z;
 
 			_joint = gameObject.AddComponent<FixedJoint2D>();
+			_joint.enableCollision = true;
 			_joint.autoConfigureConnectedAnchor = true;
 			_joint.anchor = new Vector2(_plugOffset, 0.0f);
 			_joint.connectedBody = pPlug.Body;

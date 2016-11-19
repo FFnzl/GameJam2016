@@ -11,6 +11,8 @@ public class CharacterMotor : MonoBehaviour {
 	private Rigidbody2D _rigidBody;
 	private Camera _cam;
 
+	private bool _useController;
+
 	private void Start () {
 		_rigidBody = GetComponent<Rigidbody2D>();
 		_cam = Camera.main;
@@ -25,10 +27,22 @@ public class CharacterMotor : MonoBehaviour {
 	}
 
 	private void Update () {
-		float camDis = _cam.transform.position.y - transform.position.y;
-		Vector3 mouse = _cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, camDis));
-		float angleRad = Mathf.Atan2(mouse.y - transform.position.y, mouse.x - transform.position.x);
-		float angle = angleRad * Mathf.Rad2Deg;
-		_rigidBody.rotation = angle;
+		if (Input.GetKey(KeyCode.X)) {
+			_useController = !_useController;
+		}
+
+		if (_useController) {
+			float x = Input.GetAxis("JoyHorizontal");
+			float y = Input.GetAxis("JoyVertical");
+
+			if (x != 0.0f || y != 0.0f) {
+				_rigidBody.rotation = Mathf.Atan2(y, x) * Mathf.Rad2Deg;
+			}
+		} else {
+			float camDis = _cam.transform.position.y - transform.position.y;
+			Vector3 mouse = _cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, camDis));
+			float angleRad = Mathf.Atan2(mouse.y - transform.position.y, mouse.x - transform.position.x);
+			_rigidBody.rotation = angleRad * Mathf.Rad2Deg;
+		}
 	}
 }
