@@ -5,6 +5,8 @@ public class RoomGenerator : MonoBehaviour {
 
     public GameObject doorPrefab;
 
+    public Vector2 scale = new Vector2(3,3);
+
     public GameObject[] oneEntryRooms;
     public GameObject[] twoEntryRoomsL;
     public GameObject[] twoEntryRoomsD;
@@ -188,6 +190,6 @@ public class RoomGenerator : MonoBehaviour {
                 }
             }
         }
-
+        transform.localScale = new Vector3(scale.x, scale.y);
     }
 }
