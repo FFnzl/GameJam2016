@@ -26,8 +26,8 @@ public class scoreCalculation : MonoBehaviour {
         perfects = s.numberPerfect;
                 
         timeScoreTxt.text = restTime.ToString();
-        roomsTxt.text = "\n" + clearedRooms.ToString() + " / " + totalRooms.ToString();
-        perfectScoreTxt.text = "\n\n" + perfects.ToString() + " / " + clearedRooms.ToString();
+        roomsTxt.text = "\n" + clearedRooms.ToString() + " of " + totalRooms.ToString();
+        perfectScoreTxt.text = "\n\n" + perfects.ToString() + " of " + clearedRooms.ToString();
 
         endScoreTxt.text = calc().ToString();
 
