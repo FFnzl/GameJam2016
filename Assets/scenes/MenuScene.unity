@@ -132,6 +132,23 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6fa0df1ee89ee5545a50c08257693d55, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &433430794 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000011691045166, guid: 7d1b7defd7f0e85438418212d689dbb0,
+    type: 2}
+  m_PrefabInternal: {fileID: 919148712}
+--- !u!114 &433430798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 433430794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62d1428eb86e9f640b970c1b1af85ba6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 1
 --- !u!1 &691682767
 GameObject:
   m_ObjectHideFlags: 0
@@ -377,6 +394,52 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012773303024, guid: 7d1b7defd7f0e85438418212d689dbb0,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 96e4bc99cee06514080bf25f259c7d95,
+        type: 3}
+    - target: {fileID: 224000012004325624, guid: 7d1b7defd7f0e85438418212d689dbb0,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.000076293945
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000012004325624, guid: 7d1b7defd7f0e85438418212d689dbb0,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -265
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000012004325624, guid: 7d1b7defd7f0e85438418212d689dbb0,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 664
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000012004325624, guid: 7d1b7defd7f0e85438418212d689dbb0,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 450
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012773303024, guid: 7d1b7defd7f0e85438418212d689dbb0,
+        type: 2}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012773303024, guid: 7d1b7defd7f0e85438418212d689dbb0,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012773303024, guid: 7d1b7defd7f0e85438418212d689dbb0,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012773303024, guid: 7d1b7defd7f0e85438418212d689dbb0,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7d1b7defd7f0e85438418212d689dbb0, type: 2}
