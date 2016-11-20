@@ -11,10 +11,11 @@ public class DestroyDust : MonoBehaviour {
 		_suckSounds = FindObjectOfType<SuckSounds>();
 	}
 
-	private void OnTriggerStay2D (Collider2D pOther) {
+	private void OnTriggerEnter2D (Collider2D pOther) {
 		if (pOther.tag == "Dust" && _plug.Connected) {
 			pOther.transform.DOScale(0.0f, 0.3f).OnComplete(() => Destroy(pOther.gameObject));
-			_suckSounds.SuckIn();
+            GameObject.FindGameObjectWithTag("Granny").GetComponent<Animator>().SetTrigger("Happy");
+            _suckSounds.SuckIn();
 		}
 	}
 }

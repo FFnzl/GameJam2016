@@ -22,7 +22,7 @@ GameObject:
   - 114: {fileID: 114000014200722016}
   m_Layer: 0
   m_Name: Stats
-  m_TagString: Untagged
+  m_TagString: Stats
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

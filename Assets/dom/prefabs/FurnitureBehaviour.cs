@@ -43,6 +43,10 @@ public class FurnitureBehaviour : MonoBehaviour {
             uiScript.addPunish(score);
             Collided = true;
 
+            string trigger = Random.Range(0, 2) >= 1 ? "Angry" : "Shocked"; 
+
+            GameObject.FindGameObjectWithTag("Granny").GetComponent<Animator>().SetTrigger(trigger);
+
             r.StuffSmashed();
         }
     }
