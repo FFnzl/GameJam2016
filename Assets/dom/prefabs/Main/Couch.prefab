@@ -22,7 +22,7 @@ GameObject:
   - 50: {fileID: 50000013621551460}
   - 61: {fileID: 61000013697698050}
   - 114: {fileID: 114000013950137422}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Couch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012878798178}
   - 212: {fileID: 212000012585134274}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GSC_props_001_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +54,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010622404332}
   - 212: {fileID: 212000011038298080}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GSC_props_001_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}

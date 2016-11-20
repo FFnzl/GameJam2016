@@ -19,7 +19,8 @@ public class Socket : MonoBehaviour {
 	public void ConnectPlug (Plug pPlug) {
 		if (_joint == null) {
 			pPlug.Body.position = _plugPosition.position;
-			pPlug.Body.rotation = _plugPosition.rotation.z;
+			pPlug.Body.rotation = _plugPosition.rotation.eulerAngles.z;
+			pPlug.Body.velocity = Vector3.zero;
 
 			_joint = gameObject.AddComponent<FixedJoint2D>();
 			_joint.enableCollision = true;

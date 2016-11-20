@@ -22,7 +22,7 @@ GameObject:
   - 50: {fileID: 50000013198455918}
   - 61: {fileID: 61000014022728330}
   - 114: {fileID: 114000012667656282}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tisch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011220925462}
   - 212: {fileID: 212000011171922574}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GSC_props_001_7 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +54,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012755159926}
   - 212: {fileID: 212000010947273910}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GSC_props_001_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +70,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011742334798}
   - 212: {fileID: 212000012735657940}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GSC_props_001_6 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013452820954}
   - 212: {fileID: 212000010219897158}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GSC_props_001_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}

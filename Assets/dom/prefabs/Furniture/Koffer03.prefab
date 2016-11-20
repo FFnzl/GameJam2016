@@ -23,7 +23,7 @@ GameObject:
   - 50: {fileID: 50000010329456088}
   - 61: {fileID: 61000012952580010}
   - 114: {fileID: 114000011377181584}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Koffer03
   m_TagString: Untagged
   m_Icon: {fileID: 0}

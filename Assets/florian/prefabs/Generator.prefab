@@ -52,15 +52,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorPrefab: {fileID: 1000012677876980, guid: 40c6dfb81eee9c44a851c845fccd777b, type: 2}
-  scale: {x: 3, y: 3}
-  oneEntryRooms:
-  - {fileID: 1000012268905602, guid: 1d2382b7f219fcb4e9869ca31215b2d9, type: 2}
-  twoEntryRoomsL:
-  - {fileID: 1000010102127682, guid: 76c48dcbf2bc34c42a6f775316f1de4a, type: 2}
-  twoEntryRoomsD:
-  - {fileID: 1000011133776112, guid: c6187a81cd6c59f4d93420c90379a044, type: 2}
-  threeEntryRooms:
-  - {fileID: 1000012132681974, guid: 46b62c49dbccd6b43b62e8f4a34470d4, type: 2}
-  fourEntryRooms:
-  - {fileID: 1000010540114404, guid: 8fa7f27b8bc6d3b49be27dbe28ef9d30, type: 2}
+  scale: {x: 2.25, y: 2.25}
   numberOfRooms: 10

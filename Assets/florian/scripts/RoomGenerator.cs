@@ -7,21 +7,28 @@ public class RoomGenerator : MonoBehaviour {
 
     public Vector2 scale = new Vector2(3,3);
 
-    public GameObject[] oneEntryRooms;
-    public GameObject[] twoEntryRoomsL;
-    public GameObject[] twoEntryRoomsD;
-    public GameObject[] threeEntryRooms;
-    public GameObject[] fourEntryRooms;
+    private GameObject[] oneEntryRooms;
+	private GameObject[] twoEntryRoomsL;
+	private GameObject[] twoEntryRoomsD;
+	private GameObject[] threeEntryRooms;
+	private GameObject[] fourEntryRooms;
 
     public int numberOfRooms;
 
     public GameObject[,] map;
 
 
+	void Awake () {
+		oneEntryRooms = Resources.LoadAll<GameObject>("rooms/O");
+		twoEntryRoomsL = Resources.LoadAll<GameObject>("rooms/L");
+		twoEntryRoomsD = Resources.LoadAll<GameObject>("rooms/I");
+		threeEntryRooms = Resources.LoadAll<GameObject>("rooms/T");
+		fourEntryRooms = Resources.LoadAll<GameObject>("rooms/X");
+	}
 
 	// Use this for initialization
 	void Start () {
-        GenerateRooms();
+		GenerateRooms();
 	}
 
     #region Utility 
@@ -135,25 +142,25 @@ public class RoomGenerator : MonoBehaviour {
                     {
                         case 1:
                             rotation = oRotation(grid, x, y);
-                            room = oneEntryRooms[Random.Range(0, oneEntryRooms.Length)];
+                            room = oneEntryRooms[Random.Range(1, oneEntryRooms.Length)];
                             break;
                         case 2:
                             if (isDiagonal(grid, x, y))
                             {
                                 rotation = diagRotation(grid, x, y);
-                                room = twoEntryRoomsD[Random.Range(0, twoEntryRoomsD.Length)];
+                                room = twoEntryRoomsD[Random.Range(1, twoEntryRoomsD.Length)];
                             }
                             else {
                                 rotation = lRotation(grid, x, y);
-                                room = twoEntryRoomsL[Random.Range(0, twoEntryRoomsL.Length)];
+                                room = twoEntryRoomsL[Random.Range(1, twoEntryRoomsL.Length)];
                             }
                             break;
                         case 3:
                             rotation = tRotation(grid, x, y);
-                            room = threeEntryRooms[Random.Range(0, threeEntryRooms.Length)];
+                            room = threeEntryRooms[Random.Range(1, threeEntryRooms.Length)];
                             break;
                         case 4:
-                            room = fourEntryRooms[Random.Range(0, fourEntryRooms.Length)];
+                            room = fourEntryRooms[Random.Range(1, fourEntryRooms.Length)];
                             break;
                     }
 

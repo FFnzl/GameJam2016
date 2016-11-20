@@ -23,7 +23,7 @@ GameObject:
   - 50: {fileID: 50000011856722776}
   - 61: {fileID: 61000013319529766}
   - 114: {fileID: 114000012164142724}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Pflanze
   m_TagString: Untagged
   m_Icon: {fileID: 0}
