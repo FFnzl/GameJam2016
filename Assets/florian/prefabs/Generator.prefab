@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorPrefab: {fileID: 1000012677876980, guid: 40c6dfb81eee9c44a851c845fccd777b, type: 2}
-  scale: {x: 3, y: 3}
+  scale: {x: 2.25, y: 2.25}
   oneEntryRooms:
   - {fileID: 1000012268905602, guid: 1d2382b7f219fcb4e9869ca31215b2d9, type: 2}
   twoEntryRoomsL:
