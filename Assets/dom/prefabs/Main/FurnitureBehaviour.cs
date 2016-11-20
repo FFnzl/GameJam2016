@@ -13,6 +13,13 @@ public class FurnitureBehaviour : MonoBehaviour {
     [SerializeField] private GameObject scoreTextPrefab;
     private GameObject scoreText;
 
+    private Room r;
+    public Room ParentRoom
+    {
+        get { return r; }
+        set { r = value; }
+    }
+
     private bool collided;
     public bool Collided
     {
@@ -35,6 +42,8 @@ public class FurnitureBehaviour : MonoBehaviour {
             scoreText.transform.DOBlendableMoveBy(Vector2.up, 1).OnComplete<Tween>(() => Object.DestroyObject(scoreText));
             uiScript.addPunish(score);
             Collided = true;
+
+            r.StuffSmashed();
         }
     }
 }

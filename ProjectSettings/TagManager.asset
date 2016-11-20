@@ -9,6 +9,7 @@ TagManager:
   - Plug
   - Socket
   - JunkManager
+  - MinimapIcon
   layers:
   - Default
   - TransparentFX
@@ -22,7 +23,7 @@ TagManager:
   - Player
   - Furniture
   - Cable
-  - 
+  - Minimap
   - 
   - 
   - 
