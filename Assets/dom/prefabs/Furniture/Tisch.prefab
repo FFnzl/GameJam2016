@@ -151,10 +151,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010470816506}
-  m_LocalRotation: {x: 0.032347955, y: 0.010406381, z: 0.30606776, w: 0.95140314}
+  m_LocalRotation: {x: 0, y: 0, z: 0.30868497, w: 0.9511644}
   m_LocalPosition: {x: -0.0822, y: 0.2015, z: -0.05}
   m_LocalScale: {x: 1, y: 1.0061219, z: 1.006126}
-  m_LocalEulerAnglesHint: {x: 3.1330001, y: 2.207, z: 35.960003}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 35.960003}
   m_Children:
   - {fileID: 4000013452820954}
   - {fileID: 4000012755159926}
@@ -205,9 +205,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 20
-  weight: 1
+  weight: 0.55
   scoreTextPrefab: {fileID: 1000012087718388, guid: 9478e06cc31ae4b42a2cf69764f73440,
     type: 2}
+  _rubbleSpawnAmount: 6
 --- !u!212 &212000010219897158
 SpriteRenderer:
   m_ObjectHideFlags: 1

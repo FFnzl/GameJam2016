@@ -11,6 +11,9 @@ public class FurnitureBehaviour : MonoBehaviour {
     [SerializeField] private float weight;
 
     [SerializeField] private GameObject scoreTextPrefab;
+
+	[SerializeField]
+	private int _rubbleSpawnAmount = 6;
     private GameObject scoreText;
 
     private Room r;
@@ -36,8 +39,12 @@ public class FurnitureBehaviour : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.rigidbody.velocity.magnitude >= weight && Collided == false)
+		if (collision.rigidbody.velocity.magnitude >= weight && Collided == false)
         {
+			
+			//TODO Add stuff here
+			GameObject.Instantiate(Resources.Load("prefabs/pfb_particles_destroy"), transform.position, Quaternion.identity);
+
             scoreText = Instantiate(scoreTextPrefab, transform.position, Quaternion.identity) as GameObject;
             scoreText.GetComponent<TextMesh>().text = "-" + score.ToString() + " Sec";
             scoreText.transform.DOBlendableMoveBy(Vector2.up, 4).OnComplete<Tween>(() => Object.DestroyObject(scoreText));
@@ -49,6 +56,17 @@ public class FurnitureBehaviour : MonoBehaviour {
             GameObject.FindGameObjectWithTag("Granny").GetComponent<Animator>().SetTrigger(trigger);
 
             r.StuffSmashed();
+
+			//TODO Add rubble to room dust list
+			for (int i = 0; i < _rubbleSpawnAmount; ++i) {
+				GameObject go = GameObject.Instantiate(Resources.Load("prefabs/pfb_rubble"), transform.position, Quaternion.Euler(0.0f, 0.0f, Random.Range(0.0f, 359.0f)), transform.parent) as GameObject;
+				go.GetComponent<Rigidbody2D>().velocity = Random.insideUnitCircle.normalized * Random.Range(30.0f, 100.0f);
+				r.dust.Add(go);
+			}
+
+			GameObject.Instantiate(Resources.Load("prefabs/pfb_destruction_sound"), transform.position, Quaternion.identity);
+
+			Destroy(gameObject);
         }
     }
 }

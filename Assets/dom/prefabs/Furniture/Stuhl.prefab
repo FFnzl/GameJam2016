@@ -89,6 +89,7 @@ MonoBehaviour:
   weight: 0.5
   scoreTextPrefab: {fileID: 1000012087718388, guid: 9478e06cc31ae4b42a2cf69764f73440,
     type: 2}
+  _rubbleSpawnAmount: 6
 --- !u!212 &212000011687083942
 SpriteRenderer:
   m_ObjectHideFlags: 1

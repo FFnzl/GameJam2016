@@ -28,14 +28,16 @@ public class MusicManager : MonoBehaviour {
 	}
 
 	private string _lastScene = "";
+	private bool _firstTime = true;
 
 	private void LoadedLevel (Scene scene, LoadSceneMode mode) {
-		if (scene.name == "MenuScene" && _lastScene != "CreditsScene") {
+		if (scene.name == "MenuScene" && _lastScene != "CreditsScene" && _lastScene != "EndScene") {
 			_source.loop = false;
 			_source.clip = _menuStart;
 			_source.Play();
 			_waitRoutine = StartCoroutine(waitForFinish(_menuLoop, true));
-		} else if (scene.name == "MainScene") {
+		} else if (scene.name == "MainScene" && _firstTime) {
+			_firstTime = false;
 			_source.loop = false;
 			StopCoroutine(_waitRoutine);
 			_waitRoutine = StartCoroutine(waitForFinish(_gameLoop, true));

@@ -82,7 +82,7 @@ public class Room : MonoBehaviour {
 
                 GameObject text = Instantiate(textPrefab, transform.position, Quaternion.identity) as GameObject;
                 text.GetComponent<TextMesh>().color = new Color(0, 1, 0);
-                text.GetComponent<TextMesh>().text = (perfect ? "PERFECT! " : "+") + sec + " Sec";
+                text.GetComponent<TextMesh>().text = (perfect ? "PERFECT! " : " ") + (-sec) + " Sec";
                 text.transform.DOBlendableMoveBy(Vector2.up, 4).OnComplete<Tween>(() => Object.DestroyObject(text));
 
             }

@@ -110,7 +110,7 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010509276184}
   m_UseAutoMass: 0
-  m_Mass: 50
+  m_Mass: 2
   m_LinearDrag: 10
   m_AngularDrag: 10
   m_GravityScale: 0
@@ -144,11 +144,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1049bdf03e5125d4ea1eb09f7c0dbace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiText: {fileID: 0}
   score: 20
-  weight: 1.1
+  weight: 0.6
   scoreTextPrefab: {fileID: 1000012087718388, guid: 9478e06cc31ae4b42a2cf69764f73440,
     type: 2}
+  _rubbleSpawnAmount: 6
 --- !u!212 &212000011038298080
 SpriteRenderer:
   m_ObjectHideFlags: 1

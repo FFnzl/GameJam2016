@@ -30,7 +30,7 @@ public class scoreCalculation : MonoBehaviour {
         perfectScoreTxt.text = "\n\n" + perfects.ToString() + " of " + clearedRooms.ToString();
 
         endScoreTxt.text = calc().ToString();
-
+		Destroy(s.gameObject);
 	}
 
     private int calc()
