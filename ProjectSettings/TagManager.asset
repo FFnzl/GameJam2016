@@ -9,6 +9,7 @@ TagManager:
   - Plug
   - Socket
   - JunkManager
+  - MinimapIcon
   layers:
   - Default
   - TransparentFX

@@ -184,7 +184,7 @@ GameObject:
   - 212: {fileID: 212000014142505606}
   m_Layer: 12
   m_Name: grey (1)
-  m_TagString: Untagged
+  m_TagString: MinimapIcon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -357,7 +357,7 @@ GameObject:
   - 212: {fileID: 212000010959999672}
   m_Layer: 12
   m_Name: grey (2)
-  m_TagString: Untagged
+  m_TagString: MinimapIcon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -440,7 +440,7 @@ GameObject:
   - 212: {fileID: 212000010654839728}
   m_Layer: 12
   m_Name: grey
-  m_TagString: Untagged
+  m_TagString: MinimapIcon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1039,6 +1039,12 @@ MonoBehaviour:
   doors: []
   dust: []
   tiles: []
+  mapIcons:
+  - {fileID: 1000014150580248}
+  - {fileID: 1000012141204156}
+  - {fileID: 1000013693165264}
+  doneMapIcon: {fileID: 1000013008509746, guid: f3c6dd20236cd8e4c9563a81fb3f8e6b,
+    type: 2}
 --- !u!114 &114000014230478874
 MonoBehaviour:
   m_ObjectHideFlags: 1

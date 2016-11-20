@@ -11,6 +11,12 @@ public class Room : MonoBehaviour {
     public List<GameObject> dust;
     public List<GameObject> tiles;
 
+    public List<GameObject> mapIcons;
+
+    public GameObject doneMapIcon;
+
+    private bool done = false;
+
     void Awake()
     {
         doors = new List<GameObject>();
@@ -20,21 +26,38 @@ public class Room : MonoBehaviour {
 
     void Update()
     {
-        float dustInPercent = 0f;
-
-        foreach(GameObject d in dust)
+        if(!done)
         {
-            if (d != null) dustInPercent += 1;
+            float dustInPercent = 0f;
+
+            foreach (GameObject d in dust)
+            {
+                if (d != null) dustInPercent += 1;
+            }
+
+            if (dust.Count == 0)
+            {
+                dustInPercent = 1;
+            }
+            else dustInPercent /= dust.Count;
+            tiles.ForEach((x) => {
+                SpriteRenderer sr = x.GetComponent<SpriteRenderer>();
+                sr.color = Color.HSVToRGB(0, 0, ((1f - dustInPercent) * 0.5f) + 0.5f);
+            });
+            mapIcons.ForEach((x) =>
+            {
+                SpriteRenderer sr = x.GetComponent<SpriteRenderer>();
+                Color c = sr.color;
+                sr.color = new Color(dustInPercent, (1f - dustInPercent), 0f);
+            });
+
+            if (dustInPercent == 0)
+            {
+                done = true;
+                Instantiate(doneMapIcon, transform.position, Quaternion.identity);
+            }
         }
-
-        if (dust.Count == 0)
-        {
-            dustInPercent = 1;
-        } else dustInPercent /= dust.Count;
-        tiles.ForEach((x) => {
-            SpriteRenderer sr = x.GetComponent<SpriteRenderer>();
-            sr.color = Color.HSVToRGB(0, 0, ((1f - dustInPercent) * 0.5f) + 0.5f);
-        });
+        
     }
-    
+
 }
