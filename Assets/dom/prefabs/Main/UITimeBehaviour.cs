@@ -2,6 +2,8 @@
 using System.Collections;
 using UnityEngine.UI;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
+
 
 public class UITimeBehaviour : MonoBehaviour {
 
@@ -33,6 +35,10 @@ public class UITimeBehaviour : MonoBehaviour {
         {
             txt.color = startColor;
             txt.fontSize = startSize;
+        }
+        if(timeLimit < 0)
+        {
+            SceneManager.LoadScene("EndScene");
         }
 	}
 
