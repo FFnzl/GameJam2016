@@ -10,6 +10,8 @@ public class Plug : MonoBehaviour {
 	public Rigidbody2D Body;
 	public bool Connected;
 
+    public GameObject noEnergyIcon;
+
 
 	private Socket _currentSocket;
 	private bool _onSocket;
@@ -51,7 +53,9 @@ public class Plug : MonoBehaviour {
 
 		_vacuumSounds.ConnectedPlug();
 		_plugSounds.Connect();
-	}
+
+        if (noEnergyIcon != null) noEnergyIcon.SetActive(!Connected);
+    }
 
 	public void Disconnect () {
 		_currentSocket = null;
@@ -59,7 +63,9 @@ public class Plug : MonoBehaviour {
 
 		_vacuumSounds.DisconnectedPlug();
 		_plugSounds.Disconnect();
-	}
+
+        if (noEnergyIcon != null) noEnergyIcon.SetActive(!Connected);
+    }
 
 	private void OnTriggerEnter2D (Collider2D pOther) {
 		if (pOther.tag == "Socket") {
