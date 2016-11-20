@@ -16,6 +16,7 @@ public class Room : MonoBehaviour {
     public GameObject doneMapIcon;
 
     private bool done = false;
+    private bool perfect = true;
 
     void Awake()
     {
@@ -23,6 +24,17 @@ public class Room : MonoBehaviour {
         tiles = new List<GameObject>();
         dust = new List<GameObject>();
     }
+
+
+    void Start()
+    {
+        FurnitureBehaviour[] f = GetComponentsInChildren<FurnitureBehaviour>();
+        foreach(FurnitureBehaviour fe in f)
+        {
+            fe.ParentRoom = this;
+        }
+    }
+
 
     void Update()
     {
@@ -54,10 +66,20 @@ public class Room : MonoBehaviour {
             if (dustInPercent == 0)
             {
                 done = true;
-                Instantiate(doneMapIcon, transform.position, Quaternion.identity);
+                GameObject o = Instantiate(doneMapIcon, transform.position, Quaternion.identity) as GameObject;
+                if (perfect) doneMapIcon.GetComponent<SpriteRenderer>().color = new Color(1, 1, 0);
+
+                Stats s = GameObject.FindGameObjectWithTag("Stats").GetComponent<Stats>();
+                s.roomsCleared++;
+                s.numberPerfect += perfect ? 1 : 0;
             }
         }
         
+    }
+
+    public void StuffSmashed()
+    {
+        perfect = false;
     }
 
 }
