@@ -8,18 +8,25 @@ public class PlugPickup : MonoBehaviour {
 	private bool _carryingPlug;
 
 	private Plug _plug;
+	private ChangeCharacterSprite _sprite;
+
+	[SerializeField]
+	private Transform _carryPoint;
 
 	private void Start () {
 		_plug = FindObjectOfType<Plug>();
+		_sprite = FindObjectOfType<ChangeCharacterSprite>();
 	}
 
 	private void Update () {
 		if (Input.GetButtonDown("Interact")) {
 			if (Vector2.Distance(transform.position, _plug.transform.position) <= _plugPickupDistance && !_carryingPlug) {
 				_plug.PickUp();
+				_sprite.PickUp();
 				_carryingPlug = true;
 			} else if (_carryingPlug) {
 				_plug.Drop();
+				_sprite.Drop();
 				_carryingPlug = false;
 			}
 		}
@@ -27,8 +34,8 @@ public class PlugPickup : MonoBehaviour {
 
 	private void FixedUpdate () {
 		if (_carryingPlug) {
-			//_plug.Body.position = transform.position;
-			_plug.Body.MovePosition(transform.position);
+			_plug.Body.MovePosition(_carryPoint.position);
+			_plug.Body.MoveRotation(_carryPoint.rotation.eulerAngles.z);
 		}
 	}
 }

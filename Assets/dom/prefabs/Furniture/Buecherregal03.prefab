@@ -23,7 +23,7 @@ GameObject:
   - 50: {fileID: 50000010040042950}
   - 61: {fileID: 61000011944640774}
   - 114: {fileID: 114000014092955556}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Buecherregal03
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -23,7 +23,7 @@ GameObject:
   - 50: {fileID: 50000011025282916}
   - 61: {fileID: 61000010083495722}
   - 114: {fileID: 114000013969596272}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Kommode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
