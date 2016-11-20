@@ -21,17 +21,27 @@ public class MusicManager : MonoBehaviour {
 		_gameLoop = Resources.Load<AudioClip>("sounds/maintheme_game_loop");
 	}
 
+	private void Start () {
+		if (FindObjectsOfType<MusicManager>().Length > 1) {
+			Destroy(gameObject);
+		}
+	}
+
+	private string _lastScene = "";
+
 	private void LoadedLevel (Scene scene, LoadSceneMode mode) {
-		if (scene.buildIndex == 0) {
+		if (scene.name == "MenuScene" && _lastScene != "CreditsScene") {
 			_source.loop = false;
 			_source.clip = _menuStart;
 			_source.Play();
 			_waitRoutine = StartCoroutine(waitForFinish(_menuLoop, true));
-		} else {
+		} else if (scene.name == "MainScene") {
 			_source.loop = false;
 			StopCoroutine(_waitRoutine);
 			_waitRoutine = StartCoroutine(waitForFinish(_gameLoop, true));
 		}
+
+		_lastScene = scene.name;
 	}
 
 	private IEnumerator waitForFinish (AudioClip pNextClip, bool pLoop) {

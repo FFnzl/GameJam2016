@@ -11,11 +11,11 @@ public class buttonBehaviour : MonoBehaviour {
 
     public void enterCredits()
     {
-        SceneManager.LoadScene("mainScene");
+        SceneManager.LoadScene("CreditsScene");
     }
 
     public void startGame()
     {
-        SceneManager.LoadScene("mainScene");
+        SceneManager.LoadScene("MainScene");
     }
 }
