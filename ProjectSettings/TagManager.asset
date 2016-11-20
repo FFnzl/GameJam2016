@@ -5,8 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Dust
+  - FloorManager
   - Plug
   - Socket
+  - JunkManager
   layers:
   - Default
   - TransparentFX
