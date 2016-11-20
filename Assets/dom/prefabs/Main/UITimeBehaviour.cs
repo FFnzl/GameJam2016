@@ -36,6 +36,8 @@ public class UITimeBehaviour : MonoBehaviour {
             txt.color = startColor;
             txt.fontSize = startSize;
         }
+        stats.restTime = (int)Mathf.Max(0, timeLimit);
+
         if(timeLimit < 0)
         {
             SceneManager.LoadScene("EndScene");

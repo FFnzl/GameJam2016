@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
+
+
 
 public class Stats : MonoBehaviour {
 
@@ -11,6 +14,14 @@ public class Stats : MonoBehaviour {
     void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
+    }
+
+    void Update()
+    {
+        if(roomsCleared == totalRooms)
+        {
+            SceneManager.LoadScene("EndScene");
+        }
     }
 	
 }
