@@ -14,7 +14,6 @@ public class RandomDustPlacement : MonoBehaviour {
     private Room room;
 
     private void Start () {
-
         room = GetComponent<Room>();
 
         for (int i = 0; i < _dustCount; ++i) {
