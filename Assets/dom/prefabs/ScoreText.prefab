@@ -21,7 +21,7 @@ GameObject:
   - 4: {fileID: 4000011577047610}
   - 23: {fileID: 23000010534219326}
   - 102: {fileID: 102000011413343072}
-  - 114: {fileID: 114000012656634146}
+  - 114: {fileID: 114000011761762294}
   m_Layer: 0
   m_Name: ScoreText
   m_TagString: Untagged
@@ -55,7 +55,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5181a00279d4e7a4fbbf68982178f6de, type: 3}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -80,19 +80,19 @@ TextMesh:
   m_GameObject: {fileID: 1000012087718388}
   m_Text: 0
   m_OffsetZ: 0
-  m_CharacterSize: 0.2
+  m_CharacterSize: 0.05
   m_LineSpacing: 1
   m_Anchor: 4
   m_Alignment: 0
   m_TabSize: 28
-  m_FontSize: 56
-  m_FontStyle: 3
+  m_FontSize: 28
+  m_FontStyle: 1
   m_RichText: 1
-  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Font: {fileID: 12800000, guid: 5181a00279d4e7a4fbbf68982178f6de, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 4278190335
---- !u!114 &114000012656634146
+--- !u!114 &114000011761762294
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

@@ -8,7 +8,7 @@ public class FurnitureBehaviour : MonoBehaviour {
     private UITimeBehaviour uiScript;
 
     [SerializeField] private int score;
-    [SerializeField] private int weight;
+    [SerializeField] private float weight;
 
     [SerializeField] private GameObject scoreTextPrefab;
     private GameObject scoreText;
