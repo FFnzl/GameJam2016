@@ -260,6 +260,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010145761498}
+  - 50: {fileID: 50000012261984848}
   m_Layer: 0
   m_Name: Walls
   m_TagString: Untagged
@@ -550,6 +551,23 @@ Transform:
   - {fileID: 4000010145761498}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!50 &50000012261984848
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013495875112}
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!61 &61000010326708064
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -887,7 +905,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: -5
+  m_SortingOrder: -6
   m_Sprite: {fileID: 21300000, guid: 135cec86b952ccd408bb7b8bc17cd9ec, type: 3}
   m_Color: {r: 0.07586217, g: 1, b: 0, a: 1}
   m_FlipX: 0

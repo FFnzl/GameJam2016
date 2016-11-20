@@ -27,7 +27,10 @@ public class Room : MonoBehaviour {
             if (d != null) dustInPercent += 1;
         }
 
-        dustInPercent /= dust.Count;
+        if (dust.Count == 0)
+        {
+            dustInPercent = 1;
+        } else dustInPercent /= dust.Count;
         tiles.ForEach((x) => {
             SpriteRenderer sr = x.GetComponent<SpriteRenderer>();
             sr.color = Color.HSVToRGB(0, 0, ((1f - dustInPercent) * 0.5f) + 0.5f);
