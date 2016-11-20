@@ -4,7 +4,7 @@ using DG.Tweening;
 using UnityEngine.UI;
 
 public class FurnitureBehaviour : MonoBehaviour {
-    [SerializeField] private GameObject uiText;
+    private GameObject uiText;
     private UITimeBehaviour uiScript;
 
     [SerializeField] private int score;
@@ -29,8 +29,9 @@ public class FurnitureBehaviour : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        uiScript = uiText.GetComponent<UITimeBehaviour>();
         Collided = false;
+		uiText = GameObject.FindGameObjectWithTag("uiTimer");
+		uiScript = uiText.GetComponent<UITimeBehaviour>();
 	}
 
     private void OnCollisionEnter2D(Collision2D collision)

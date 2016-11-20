@@ -12,6 +12,7 @@ TagManager:
   - MinimapIcon
   - Stats
   - Granny
+  - uiTimer
   layers:
   - Default
   - TransparentFX
