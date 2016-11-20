@@ -2,6 +2,8 @@
 using System.Collections;
 using UnityEngine.UI;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
+
 
 public class UITimeBehaviour : MonoBehaviour {
 
@@ -11,12 +13,14 @@ public class UITimeBehaviour : MonoBehaviour {
     private Color startColor;
     private int startSize;
     private bool changing;
+    Stats stats;
 
 	// Use this for initialization
 	void Start () {
         txt = GetComponent<Text>();
         startColor = txt.color;
         startSize = txt.fontSize;
+        stats = GameObject.FindGameObjectWithTag("Stats").GetComponent<Stats>();
 	}
 	
 	// Update is called once per frame
@@ -31,6 +35,12 @@ public class UITimeBehaviour : MonoBehaviour {
         {
             txt.color = startColor;
             txt.fontSize = startSize;
+        }
+        stats.restTime = (int)Mathf.Max(0, timeLimit);
+
+        if(timeLimit < 0)
+        {
+            SceneManager.LoadScene("EndScene");
         }
 	}
 

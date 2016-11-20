@@ -2375,6 +2375,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114000013145727592, guid: cb70199c31bd29f4f9984443152978b0,
+        type: 2}
+      propertyPath: numberOfRooms
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb70199c31bd29f4f9984443152978b0, type: 2}
   m_IsPrefabParent: 0
@@ -2506,7 +2511,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6817124a1fa668343bef4697ce65b6cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLimit: 300
+  timeLimit: 60
 --- !u!4 &1811840254 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4000012037924148, guid: c957d459ab458504bb6d6376106015dc,
