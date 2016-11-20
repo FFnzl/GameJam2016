@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: b1d13cb98b9d27c4bbf3476dd159da53
+timeCreated: 1479584442
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 5
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Karma Future
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
