@@ -74,7 +74,7 @@ public class Room : MonoBehaviour {
                 s.roomsCleared++;
                 s.numberPerfect += perfect ? 1 : 0;
 
-                int sec = perfect ? 20 : 10;
+                int sec = perfect ? -20 : -10;
 
                 GameObject.FindGameObjectWithTag("uiTimer").GetComponent<UITimeBehaviour>().addPunish(sec);
 

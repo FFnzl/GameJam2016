@@ -11,6 +11,8 @@ public class Stats : MonoBehaviour {
     public int totalRooms = 0;
     public int restTime = 0;
 
+    private bool done = false;
+
     void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
@@ -18,8 +20,9 @@ public class Stats : MonoBehaviour {
 
     void Update()
     {
-        if(roomsCleared == totalRooms)
+        if(roomsCleared == totalRooms && !done)
         {
+            done = true;
             SceneManager.LoadScene("EndScene");
         }
     }
