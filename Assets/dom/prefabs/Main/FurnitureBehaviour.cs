@@ -40,7 +40,7 @@ public class FurnitureBehaviour : MonoBehaviour {
         {
             scoreText = Instantiate(scoreTextPrefab, transform.position, Quaternion.identity) as GameObject;
             scoreText.GetComponent<TextMesh>().text = "-" + score.ToString() + " Sec";
-            scoreText.transform.DOBlendableMoveBy(Vector2.up, 1).OnComplete<Tween>(() => Object.DestroyObject(scoreText));
+            scoreText.transform.DOBlendableMoveBy(Vector2.up, 4).OnComplete<Tween>(() => Object.DestroyObject(scoreText));
             uiScript.addPunish(score);
             Collided = true;
 
