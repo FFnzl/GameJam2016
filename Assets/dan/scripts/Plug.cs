@@ -14,7 +14,8 @@ public class Plug : MonoBehaviour {
 	private Socket _currentSocket;
 	private bool _onSocket;
 	private Socket _touchingSocket;
-	private VacuumSounds _sounds;
+	private VacuumSounds _vacuumSounds;
+	private PlugSounds _plugSounds;
 
 	private void Start () {
 		Body = GetComponent<Rigidbody2D>();
@@ -22,19 +23,24 @@ public class Plug : MonoBehaviour {
 		DistanceJoint = GetComponent<DistanceJoint2D>();
 		HingeJoint = GetComponent<HingeJoint2D>();
 
-		_sounds = FindObjectOfType<VacuumSounds>();
+		_vacuumSounds = FindObjectOfType<VacuumSounds>();
+		_plugSounds = FindObjectOfType<PlugSounds>();
 	}
 
 
 	public void PickUp () {
 		if (Connected) {
 			_currentSocket.Disconnect();
+		} else {
+			_plugSounds.PickUp();
 		}
 	}
 
 	public void Drop () {
 		if (_onSocket) {
 			connect();
+		} else {
+			_plugSounds.Drop();
 		}
 	}
 
@@ -43,14 +49,16 @@ public class Plug : MonoBehaviour {
 		_currentSocket = _touchingSocket;
 		Connected = true;
 
-		_sounds.ConnectedPlug();
+		_vacuumSounds.ConnectedPlug();
+		_plugSounds.Connect();
 	}
 
 	public void Disconnect () {
 		_currentSocket = null;
 		Connected = false;
 
-		_sounds.DisconnectedPlug();
+		_vacuumSounds.DisconnectedPlug();
+		_plugSounds.Disconnect();
 	}
 
 	private void OnTriggerEnter2D (Collider2D pOther) {
