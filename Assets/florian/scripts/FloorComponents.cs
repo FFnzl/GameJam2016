@@ -7,6 +7,7 @@ public class FloorComponents : MonoBehaviour {
     public Sprite[] floors;
 
     public GameObject floorPrefab;
+    public GameObject textPrefab;
 
     public Sprite RandomSprite
     {

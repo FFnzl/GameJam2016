@@ -11,12 +11,14 @@ public class UITimeBehaviour : MonoBehaviour {
     private Color startColor;
     private int startSize;
     private bool changing;
+    Stats stats;
 
 	// Use this for initialization
 	void Start () {
         txt = GetComponent<Text>();
         startColor = txt.color;
         startSize = txt.fontSize;
+        stats = GameObject.FindGameObjectWithTag("Stats").GetComponent<Stats>();
 	}
 	
 	// Update is called once per frame

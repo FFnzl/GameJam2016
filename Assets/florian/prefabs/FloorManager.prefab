@@ -69,3 +69,4 @@ MonoBehaviour:
   - {fileID: 21300032, guid: 04fcd653633d1aa47a6e6d6614ae2921, type: 3}
   floorPrefab: {fileID: 1000013636115838, guid: e8c051fdb9cef8540bb3b47768f8f7ae,
     type: 2}
+  textPrefab: {fileID: 1000012087718388, guid: 9478e06cc31ae4b42a2cf69764f73440, type: 2}

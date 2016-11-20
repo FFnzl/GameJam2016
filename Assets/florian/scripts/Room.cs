@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 
 public class Room : MonoBehaviour {
 
@@ -67,11 +68,23 @@ public class Room : MonoBehaviour {
             {
                 done = true;
                 GameObject o = Instantiate(doneMapIcon, transform.position, Quaternion.identity) as GameObject;
-                if (perfect) doneMapIcon.GetComponent<SpriteRenderer>().color = new Color(1, 1, 0);
-
+                if (perfect) o.GetComponent<SpriteRenderer>().color = new Color(1, 1, 0);
+                else o.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1);
                 Stats s = GameObject.FindGameObjectWithTag("Stats").GetComponent<Stats>();
                 s.roomsCleared++;
                 s.numberPerfect += perfect ? 1 : 0;
+
+                int sec = perfect ? 20 : 10;
+
+                GameObject.FindGameObjectWithTag("uiTimer").GetComponent<UITimeBehaviour>().addPunish(sec);
+
+                GameObject textPrefab = GameObject.FindGameObjectWithTag("FloorManager").GetComponent<FloorComponents>().textPrefab;
+
+                GameObject text = Instantiate(textPrefab, transform.position, Quaternion.identity) as GameObject;
+                text.GetComponent<TextMesh>().color = new Color(0, 1, 0);
+                text.GetComponent<TextMesh>().text = (perfect ? "PERFECT! " : "+") + sec + " Sec";
+                text.transform.DOBlendableMoveBy(Vector2.up, 4).OnComplete<Tween>(() => Object.DestroyObject(text));
+
             }
         }
         
