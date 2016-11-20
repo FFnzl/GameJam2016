@@ -477,6 +477,10 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1000011597787780, guid: c957d459ab458504bb6d6376106015dc, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c957d459ab458504bb6d6376106015dc, type: 2}
   m_IsPrefabParent: 0
@@ -592,7 +596,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorPrefab: {fileID: 1000012677876980, guid: 40c6dfb81eee9c44a851c845fccd777b, type: 2}
-  scale: {x: 2.5, y: 2.5}
+  scale: {x: 3, y: 3}
   oneEntryRooms:
   - {fileID: 1000012268905602, guid: 1d2382b7f219fcb4e9869ca31215b2d9, type: 2}
   twoEntryRoomsL:
