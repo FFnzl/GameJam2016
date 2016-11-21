@@ -11,8 +11,6 @@ public class CharacterMotor : MonoBehaviour {
 	private Rigidbody2D _rigidBody;
 	private Camera _cam;
 
-	private bool _useController;
-
 	private void Start () {
 		_rigidBody = GetComponent<Rigidbody2D>();
 		_cam = Camera.main;
@@ -27,11 +25,7 @@ public class CharacterMotor : MonoBehaviour {
 	}
 
 	private void Update () {
-		if (Input.GetKey(KeyCode.X)) {
-			_useController = !_useController;
-		}
-
-		if (_useController) {
+		if (FindObjectOfType<ControllerManager>().UsingController) {
 			float x = Input.GetAxis("JoyHorizontal");
 			float y = Input.GetAxis("JoyVertical");
 
