@@ -7,6 +7,8 @@ public class FurnitureBehaviour : MonoBehaviour {
     private GameObject uiText;
     private UITimeBehaviour uiScript;
 
+    private ChatBehaviour chat;
+
     [SerializeField] private int score;
     [SerializeField] private float weight;
 
@@ -35,13 +37,15 @@ public class FurnitureBehaviour : MonoBehaviour {
         Collided = false;
 		uiText = GameObject.FindGameObjectWithTag("uiTimer");
 		uiScript = uiText.GetComponent<UITimeBehaviour>();
+
+        chat = GameObject.FindGameObjectWithTag("Chat").GetComponent<ChatBehaviour>();
 	}
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
 		if (collision.rigidbody.velocity.magnitude >= weight && Collided == false)
         {
-			
+            chat.popUp(1);
 			//TODO Add stuff here
 			GameObject.Instantiate(Resources.Load("prefabs/pfb_particles_destroy"), transform.position, Quaternion.identity);
 

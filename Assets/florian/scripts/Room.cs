@@ -5,6 +5,8 @@ using DG.Tweening;
 
 public class Room : MonoBehaviour {
 
+    private ChatBehaviour chat;
+
     public enum RoomType { TYPE_O, TYPE_I, TYPE_L, TYPE_T, TYPE_X }
     public RoomType type;
 
@@ -34,6 +36,8 @@ public class Room : MonoBehaviour {
         {
             fe.ParentRoom = this;
         }
+
+        chat = GameObject.FindGameObjectWithTag("Chat").GetComponent<ChatBehaviour>();
     }
 
 
@@ -74,6 +78,7 @@ public class Room : MonoBehaviour {
                 s.roomsCleared++;
                 s.numberPerfect += perfect ? 1 : 0;
 
+                if (perfect) chat.popUp(2);
                 int sec = perfect ? -20 : -10;
 
                 GameObject.FindGameObjectWithTag("uiTimer").GetComponent<UITimeBehaviour>().addPunish(sec);

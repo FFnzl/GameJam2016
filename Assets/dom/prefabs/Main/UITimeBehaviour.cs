@@ -10,6 +10,8 @@ public class UITimeBehaviour : MonoBehaviour {
     private Text txt;
     [SerializeField] private float timeLimit;
 
+    private ChatBehaviour chat;
+
     private Color startColor;
     private int startSize;
     private bool changing;
@@ -21,6 +23,7 @@ public class UITimeBehaviour : MonoBehaviour {
         startColor = txt.color;
         startSize = txt.fontSize;
         stats = GameObject.FindGameObjectWithTag("Stats").GetComponent<Stats>();
+        chat = GameObject.FindGameObjectWithTag("Chat").GetComponent<ChatBehaviour>();
 	}
 	
 	// Update is called once per frame
@@ -41,6 +44,10 @@ public class UITimeBehaviour : MonoBehaviour {
         if(timeLimit < 0)
         {
             SceneManager.LoadScene("EndScene");
+        }
+        if(timeLimit % 10 <= 1)
+        {
+            chat.popUp(3);
         }
 	}
 
