@@ -2,17 +2,19 @@
 using System.Collections;
 
 public class Sparkling : MonoBehaviour {
-	private ParticleSystem[] _particles;
+	private ParticleSystem _particles;
+	private AudioSource _source;
 
 	private void Start () {
-
+		_particles = GetComponent<ParticleSystem>();
+		_source = GetComponent<AudioSource>();
 	}
 
-	public void PlaySparkle (Vector3 pWorldPos) {
+	public void PlaySparkle (Vector3 pWorldPos, float pSize) {
 		transform.position = pWorldPos;
-
-		foreach (ParticleSystem ps in _particles) {
-
-		}
+		ParticleSystem.ShapeModule sm = _particles.shape;
+		sm.box = new Vector3(pSize, pSize, 0.0f);
+		_source.Play();
+		_particles.Play();
 	}
 }

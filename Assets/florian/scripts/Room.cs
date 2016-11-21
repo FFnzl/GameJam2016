@@ -32,13 +32,16 @@ public class Room : MonoBehaviour {
     void Start()
     {
         FurnitureBehaviour[] f = GetComponentsInChildren<FurnitureBehaviour>();
-        foreach(FurnitureBehaviour fe in f)
+
+		foreach (FurnitureBehaviour fe in f)
         {
             fe.ParentRoom = this;
         }
 
         chat = GameObject.FindGameObjectWithTag("Chat").GetComponent<ChatBehaviour>();
-    }
+
+		GetComponent<RandomDustPlacement>().GenerateDust();
+	}
 
 
     void Update()
@@ -50,7 +53,7 @@ public class Room : MonoBehaviour {
             foreach (GameObject d in dust)
             {
                 if (d != null) dustInPercent += 1;
-            }
+			}
 
             if (dust.Count == 0)
             {
@@ -77,6 +80,7 @@ public class Room : MonoBehaviour {
 
                 if (dust.Count > 0)
                 {
+					FindObjectOfType<Sparkling>().PlaySparkle(transform.position, transform.lossyScale.x);
                     Stats s = GameObject.FindGameObjectWithTag("Stats").GetComponent<Stats>();
                 
                     s.roomsCleared++;
