@@ -17,6 +17,8 @@ public class RoomGenerator : MonoBehaviour {
 
     public GameObject[,] map;
 
+    public bool spawnOutside = false;
+
 
 	void Awake () {
 		oneEntryRooms = Resources.LoadAll<GameObject>("rooms/O");
@@ -138,42 +140,50 @@ public class RoomGenerator : MonoBehaviour {
 
                     GameObject room = null;
 
+                    bool startRoom = x == (s / 2) && y == (s / 2);
+
                     switch(countRooms(grid, x, y))
                     {
                         case 1:
                             rotation = oRotation(grid, x, y);
-                            room = oneEntryRooms[Random.Range(1, oneEntryRooms.Length)];
+                            room = oneEntryRooms[startRoom ? 0 : Random.Range(1, oneEntryRooms.Length)];
                             break;
                         case 2:
                             if (isDiagonal(grid, x, y))
                             {
                                 rotation = diagRotation(grid, x, y);
-                                room = twoEntryRoomsD[Random.Range(1, twoEntryRoomsD.Length)];
+                                room = twoEntryRoomsD[startRoom ? 0 : Random.Range(1, twoEntryRoomsD.Length)];
                             }
                             else {
                                 rotation = lRotation(grid, x, y);
-                                room = twoEntryRoomsL[Random.Range(1, twoEntryRoomsL.Length)];
+                                room = twoEntryRoomsL[startRoom ? 0 : Random.Range(1, twoEntryRoomsL.Length)];
                             }
                             break;
                         case 3:
                             rotation = tRotation(grid, x, y);
-                            room = threeEntryRooms[Random.Range(1, threeEntryRooms.Length)];
+                            room = threeEntryRooms[startRoom ? 0 : Random.Range(1, threeEntryRooms.Length)];
                             break;
                         case 4:
-                            room = fourEntryRooms[Random.Range(1, fourEntryRooms.Length)];
+                            room = fourEntryRooms[startRoom ? 0 : Random.Range(1, fourEntryRooms.Length)];
                             break;
                     }
 
                     float locX = x - (s/2);
                     float locY = y - (s/2);
+                    GameObject o = null;
+                    if (!(spawnOutside && startRoom))
+                    {
 
-                    GameObject o = Instantiate(room) as GameObject;
-                    o.transform.localPosition = new Vector3(locX, locY);
-                    o.transform.Rotate(new Vector3(0,0,rotation));
-                    o.transform.parent = transform;
+                        o = Instantiate(room) as GameObject;
+                        o.transform.localPosition = new Vector3(locX, locY);
+                        o.transform.Rotate(new Vector3(0, 0, rotation));
+                        o.transform.parent = transform;
+
+                        if (startRoom) o.GetComponent<RandomDustPlacement>().enabled = false;
+                    }
 
                     GameObject door = null;
-
+                        
                     if (grid[x - 1, y])
                     {
                         door = Instantiate(doorPrefab) as GameObject;
@@ -181,7 +191,7 @@ public class RoomGenerator : MonoBehaviour {
                         door.transform.localPosition = new Vector3(-0.5f + locX, 0.1f + locY, 0);
                         door.transform.Rotate(0, 0, -90);
                     }
-                    o.GetComponent<Room>().doors.Add(door);
+                    if(o != null) o.GetComponent<Room>().doors.Add(door);
                     if (map[x - 1, y] != null) map[x - 1, y].GetComponent<Room>().doors.Add(door);
 
                     if (grid[x, y -1])
@@ -190,7 +200,7 @@ public class RoomGenerator : MonoBehaviour {
                         door.transform.parent = transform;
                         door.transform.localPosition = new Vector3(-0.1f + locX, -0.5f + locY, 0);
                     }
-                    o.GetComponent<Room>().doors.Add(door);
+                    if(o != null) o.GetComponent<Room>().doors.Add(door);
                     if (map[x, y - 1] != null) map[x, y - 1].GetComponent<Room>().doors.Add(door);
 
                     map[x, y] = o;
