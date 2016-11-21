@@ -9,6 +9,12 @@ public class SoundManager : MonoBehaviour {
 	float musicVolume;
 	float effectVolume;
 
+	private void Start () {
+		if (FindObjectsOfType<SoundManager>().Length > 1) {
+			Destroy(gameObject);
+		}
+	}
+
 	public bool EffectsOn () {
 		float value;
 		_mixer.GetFloat("EffectVolume", out value);

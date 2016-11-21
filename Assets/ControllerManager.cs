@@ -8,6 +8,12 @@ public class ControllerManager : MonoBehaviour {
 		DontDestroyOnLoad(gameObject);
 	}
 
+	private void Start () {
+		if (FindObjectsOfType<MusicManager>().Length > 1) {
+			Destroy(gameObject);
+		}
+	}
+
 	public void ToggleSetting () {
 		UsingController = !UsingController;
 	}

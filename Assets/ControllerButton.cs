@@ -7,6 +7,7 @@ public class ControllerButton : MonoBehaviour {
 	}
 
 	public void OnClick () {
+		FindObjectOfType<ControllerManager>().ToggleSetting();
 		transform.GetChild(0).gameObject.SetActive(!FindObjectOfType<ControllerManager>().UsingController);
 	}
 }

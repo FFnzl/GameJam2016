@@ -30,13 +30,16 @@ public class ChatBehaviour : MonoBehaviour {
         "No dinner tonight!",
         "Be more careful!",
         "Why did you do that!?",
-        "That escalated quickly..."
+        "That escalated quickly...",
+		"Well, that sucked..."
     };
 
     private string[] happyPool =
     {
         "Groovy!",
+		"Splendid!",
         "Incredible!",
+		"Wow!",
         "Better than I expected!",
         "You got the SWAG!",
         "MO-MO-MO-MO-MONSTERKILL!!!"
@@ -49,7 +52,8 @@ public class ChatBehaviour : MonoBehaviour {
         "Eat your vegetables!",
         "My back hurts!",
         "Be careful with your cable!",
-        "Keep an eye on the mini map!"
+        "Keep an eye on the mini map!",
+		"Don't forget the plug!"
     };
 
     void Awake() {
