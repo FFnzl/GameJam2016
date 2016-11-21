@@ -5,7 +5,11 @@ using DG.Tweening;
 
 public class ChatBehaviour : MonoBehaviour {
 
+    public RectTransform _visiblePoint;
+    public RectTransform _invisiblePoint;
+
     private RectTransform rt;
+    private AudioSource aus;
     private Text txt;
 
     private float yPos;
@@ -14,7 +18,8 @@ public class ChatBehaviour : MonoBehaviour {
 
     private string[] tutorialPool =
     {
-        "Use E to grab and plug the plug!"
+        "Use E to grab and plug the plug!",
+        "Use A to grab and plug the plug!" //TODO Play this when xbox controller is ´selected
     };
 
     private string[] annoyedPool =
@@ -45,14 +50,18 @@ public class ChatBehaviour : MonoBehaviour {
         "Be careful with your cable!"
     };
 
+    void Awake() {
+aus = GetComponent<AudioSource>();
+    }
 
     // Use this for initialization
     void Start () {
         rt = GetComponent<RectTransform>();
         txt = GetComponentInChildren<Text>();
-        yPos = rt.rect.y;
+        yPos = -rt.rect.size.y;
         tweening = false;
         popUp(0,0);
+        
 	}
 
     /// <summary>
@@ -68,6 +77,8 @@ public class ChatBehaviour : MonoBehaviour {
     {
         if (!tweening)
         {
+            aus.Play();
+
             tweening = true;
 
             switch (mood)
@@ -87,8 +98,8 @@ public class ChatBehaviour : MonoBehaviour {
             }
             Sequence mySequence = DOTween.Sequence();
 
-            mySequence.Append(rt.DOBlendableMoveBy(new Vector3(0, -yPos * 2, 0), 1));
-            mySequence.Append(rt.DOBlendableMoveBy(new Vector3(0, yPos * 2, 0), 1).SetDelay(3));
+            mySequence.Append(rt.DOMove(_visiblePoint.position, 1));
+            mySequence.Append(rt.DOMove(_invisiblePoint.position, 1).SetDelay(3));
             mySequence.AppendCallback(() => tweening = false);
         }
     }
@@ -97,6 +108,7 @@ public class ChatBehaviour : MonoBehaviour {
     {
         if (!tweening)
         {
+            aus.Play();
             tweening = true;
 
             switch (mood)
@@ -116,8 +128,8 @@ public class ChatBehaviour : MonoBehaviour {
             }
             Sequence mySequence = DOTween.Sequence();
 
-            mySequence.Append(rt.DOBlendableMoveBy(new Vector3(0, -yPos * 2, 0), 1));
-            mySequence.Append(rt.DOBlendableMoveBy(new Vector3(0, yPos * 2, 0), 1).SetDelay(3));
+            mySequence.Append(rt.DOMove(_visiblePoint.position, 1));
+            mySequence.Append(rt.DOMove(_invisiblePoint.position, 1).SetDelay(3));
             mySequence.AppendCallback(() => tweening = false);
         }
     }
