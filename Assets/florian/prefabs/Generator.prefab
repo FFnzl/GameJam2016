@@ -53,4 +53,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doorPrefab: {fileID: 1000012677876980, guid: 40c6dfb81eee9c44a851c845fccd777b, type: 2}
   scale: {x: 2.25, y: 2.25}
-  numberOfRooms: 2
+  numberOfRooms: 10
+  spawnOutside: 0
