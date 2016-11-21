@@ -7,6 +7,7 @@ public class ChatBehaviour : MonoBehaviour {
 
     public RectTransform _visiblePoint;
     public RectTransform _invisiblePoint;
+    private ControllerManager cm;
 
     private RectTransform rt;
     private AudioSource aus;
@@ -19,7 +20,7 @@ public class ChatBehaviour : MonoBehaviour {
     private string[] tutorialPool =
     {
         "Use E to grab and plug the plug!",
-        "Use A to grab and plug the plug!" //TODO Play this when xbox controller is ´selected
+        "Use A to grab and plug the plug!" 
     };
 
     private string[] annoyedPool =
@@ -58,6 +59,7 @@ aus = GetComponent<AudioSource>();
     void Start () {
         rt = GetComponent<RectTransform>();
         txt = GetComponentInChildren<Text>();
+        cm = FindObjectOfType<ControllerManager>();
         yPos = -rt.rect.size.y;
         tweening = false;
         popUp(0,0);
@@ -114,7 +116,11 @@ aus = GetComponent<AudioSource>();
             switch (mood)
             {
                 case 0:
-                    txt.text = tutorialPool[index];
+                    if (index == 0)
+                    {
+                        if (cm.UsingController == true) txt.text = tutorialPool[1];
+                        else txt.text = tutorialPool[0];
+                    }
                     break;
                 case 1:
                     txt.text = annoyedPool[Random.Range(0, annoyedPool.Length)];
