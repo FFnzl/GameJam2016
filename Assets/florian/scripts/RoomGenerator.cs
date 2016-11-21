@@ -204,7 +204,7 @@ public class RoomGenerator : MonoBehaviour {
                     if (map[x, y - 1] != null) map[x, y - 1].GetComponent<Room>().doors.Add(door);
 
                     map[x, y] = o;
-                    GameObject.FindGameObjectWithTag("Stats").GetComponent<Stats>().totalRooms++;
+                    if (o != null && !startRoom) GameObject.FindGameObjectWithTag("Stats").GetComponent<Stats>().totalRooms++;
                 }
             }
         }

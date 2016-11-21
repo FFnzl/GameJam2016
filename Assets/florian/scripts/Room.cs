@@ -54,7 +54,7 @@ public class Room : MonoBehaviour {
 
             if (dust.Count == 0)
             {
-                dustInPercent = 1;
+                dustInPercent = 0;
             }
             else dustInPercent /= dust.Count;
             tiles.ForEach((x) => {
@@ -74,22 +74,26 @@ public class Room : MonoBehaviour {
                 GameObject o = Instantiate(doneMapIcon, transform.position, Quaternion.identity) as GameObject;
                 if (perfect) o.GetComponent<SpriteRenderer>().color = new Color(1, 1, 0);
                 else o.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1);
-                Stats s = GameObject.FindGameObjectWithTag("Stats").GetComponent<Stats>();
-                s.roomsCleared++;
-                s.numberPerfect += perfect ? 1 : 0;
 
-                if (perfect) chat.popUp(2);
-                int sec = perfect ? -20 : -10;
+                if (dust.Count > 0)
+                {
+                    Stats s = GameObject.FindGameObjectWithTag("Stats").GetComponent<Stats>();
+                
+                    s.roomsCleared++;
+                    s.numberPerfect += perfect ? 1 : 0;
+                
+                    if (perfect) chat.popUp(2);
+                    int sec = perfect ? -20 : -10;
 
-                GameObject.FindGameObjectWithTag("uiTimer").GetComponent<UITimeBehaviour>().addPunish(sec);
+                    GameObject.FindGameObjectWithTag("uiTimer").GetComponent<UITimeBehaviour>().addPunish(sec);
 
-                GameObject textPrefab = GameObject.FindGameObjectWithTag("FloorManager").GetComponent<FloorComponents>().textPrefab;
+                    GameObject textPrefab = GameObject.FindGameObjectWithTag("FloorManager").GetComponent<FloorComponents>().textPrefab;
 
-                GameObject text = Instantiate(textPrefab, transform.position, Quaternion.identity) as GameObject;
-                text.GetComponent<TextMesh>().color = new Color(0, 1, 0);
-                text.GetComponent<TextMesh>().text = (perfect ? "PERFECT! " : " ") + (-sec) + " Sec";
-                text.transform.DOBlendableMoveBy(Vector2.up, 4).OnComplete<Tween>(() => Object.DestroyObject(text));
-
+                    GameObject text = Instantiate(textPrefab, transform.position, Quaternion.identity) as GameObject;
+                    text.GetComponent<TextMesh>().color = new Color(0, 1, 0);
+                    text.GetComponent<TextMesh>().text = (perfect ? "PERFECT! " : " ") + (-sec) + " Sec";
+                    text.transform.DOBlendableMoveBy(Vector2.up, 4).OnComplete<Tween>(() => Object.DestroyObject(text));
+                }
             }
         }
         
