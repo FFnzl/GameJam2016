@@ -1690,7 +1690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1049bdf03e5125d4ea1eb09f7c0dbace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 7
+  score: 4
   weight: 0.5
   scoreTextPrefab: {fileID: 1000012087718388, guid: 9478e06cc31ae4b42a2cf69764f73440,
     type: 2}
@@ -1706,7 +1706,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1049bdf03e5125d4ea1eb09f7c0dbace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 10
+  score: 5
   weight: 0.5
   scoreTextPrefab: {fileID: 1000012087718388, guid: 9478e06cc31ae4b42a2cf69764f73440,
     type: 2}
@@ -1737,7 +1737,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1049bdf03e5125d4ea1eb09f7c0dbace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 20
+  score: 6
   weight: 0.6
   scoreTextPrefab: {fileID: 1000012087718388, guid: 9478e06cc31ae4b42a2cf69764f73440,
     type: 2}
@@ -1753,7 +1753,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1049bdf03e5125d4ea1eb09f7c0dbace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 10
+  score: 5
   weight: 0.5
   scoreTextPrefab: {fileID: 1000012087718388, guid: 9478e06cc31ae4b42a2cf69764f73440,
     type: 2}
@@ -1769,7 +1769,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1049bdf03e5125d4ea1eb09f7c0dbace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 7
+  score: 4
   weight: 0.5
   scoreTextPrefab: {fileID: 1000012087718388, guid: 9478e06cc31ae4b42a2cf69764f73440,
     type: 2}
@@ -1785,7 +1785,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1049bdf03e5125d4ea1eb09f7c0dbace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 10
+  score: 5
   weight: 0.5
   scoreTextPrefab: {fileID: 1000012087718388, guid: 9478e06cc31ae4b42a2cf69764f73440,
     type: 2}
@@ -1801,7 +1801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1049bdf03e5125d4ea1eb09f7c0dbace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 7
+  score: 3
   weight: 0.3
   scoreTextPrefab: {fileID: 1000012087718388, guid: 9478e06cc31ae4b42a2cf69764f73440,
     type: 2}
@@ -1829,7 +1829,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1049bdf03e5125d4ea1eb09f7c0dbace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 10
+  score: 5
   weight: 0.5
   scoreTextPrefab: {fileID: 1000012087718388, guid: 9478e06cc31ae4b42a2cf69764f73440,
     type: 2}
@@ -1845,8 +1845,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1049bdf03e5125d4ea1eb09f7c0dbace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 20
-  weight: 0.55
+  score: 6
+  weight: 0.52
   scoreTextPrefab: {fileID: 1000012087718388, guid: 9478e06cc31ae4b42a2cf69764f73440,
     type: 2}
   _rubbleSpawnAmount: 6

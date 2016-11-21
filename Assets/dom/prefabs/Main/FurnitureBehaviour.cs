@@ -43,7 +43,7 @@ public class FurnitureBehaviour : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-		if (collision.rigidbody.velocity.magnitude >= weight && Collided == false)
+		if (collision.collider.tag != "Cable" && collision.rigidbody.velocity.magnitude >= weight && Collided == false)
         {
             chat.popUp(1);
 			//TODO Add stuff here
