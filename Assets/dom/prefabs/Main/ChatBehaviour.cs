@@ -48,7 +48,8 @@ public class ChatBehaviour : MonoBehaviour {
         "Try not to break something!",
         "Eat your vegetables!",
         "My back hurts!",
-        "Be careful with your cable!"
+        "Be careful with your cable!",
+        "Keep an eye on the mini map!"
     };
 
     void Awake() {
