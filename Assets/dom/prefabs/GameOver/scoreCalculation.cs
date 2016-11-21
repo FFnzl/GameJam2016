@@ -14,6 +14,7 @@ public class scoreCalculation : MonoBehaviour {
     private int clearedRooms;
     private int totalRooms;
     private int restTime;
+    private int junk;
 
     // Use this for initialization
     void Start () {
@@ -24,6 +25,7 @@ public class scoreCalculation : MonoBehaviour {
         totalRooms = s.totalRooms;
         clearedRooms = s.roomsCleared;
         perfects = s.numberPerfect;
+        junk = s.junkCollected;
                 
         timeScoreTxt.text = restTime.ToString();
         roomsTxt.text = "\n" + clearedRooms.ToString() + " of " + totalRooms.ToString();
@@ -40,7 +42,8 @@ public class scoreCalculation : MonoBehaviour {
         result =
             restTime * 100 +
             clearedRooms * 1000 +
-            perfects * 1000;
+            perfects * 1000 +
+            junk * 5;
 
         if (totalRooms == clearedRooms) result += 5000;
 

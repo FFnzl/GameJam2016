@@ -10,6 +10,7 @@ public class Stats : MonoBehaviour {
     public int roomsCleared = 0;
     public int totalRooms = 0;
     public int restTime = 0;
+    public int junkCollected = 0;
 
     private bool done = false;
 
