@@ -35,7 +35,7 @@ public class SoundManager : MonoBehaviour {
 
 	public void ToggleEffects () {
 		float value;
-		Debug.Log(_mixer.GetFloat("EffectVolume", out value));
+		_mixer.GetFloat("EffectVolume", out value);
 
 		if (value > -70.0f) {
 			effectVolume = value;
