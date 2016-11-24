@@ -24,7 +24,7 @@ GameObject:
   - 61: {fileID: 61000011509692370}
   - 114: {fileID: 114000011337701616}
   m_Layer: 10
-  m_Name: pfb_furniture_chait
+  m_Name: pfb_furniture_chair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

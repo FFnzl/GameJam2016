@@ -14,6 +14,10 @@ public class FurnitureHelper_Inspector : Editor {
 
 		if (_cachedPrefabInstance != null) {
 			PrefabUtility.DisconnectPrefabInstance(_helper.gameObject);
+			//Object temp = PrefabUtility.CreateEmptyPrefab("Assets/dummy.prefab");
+			//PrefabUtility.ReplacePrefab(_helper.gameObject, temp, ReplacePrefabOptions.ConnectToPrefab);
+			//PrefabUtility.DisconnectPrefabInstance(_helper.gameObject);
+			//AssetDatabase.DeleteAsset("Assets/dummy.prefab");
 		}
 	}
 
@@ -24,6 +28,12 @@ public class FurnitureHelper_Inspector : Editor {
 
 		Debug.Log(_helper.FurniturePrefabs.Length);
 
+		if (_cachedPrefabInstance == null) {
+			GUILayout.Label("Instance connection = false");
+		} else {
+			GUILayout.Label("Instance connection = true");
+		}
+
 		foreach (FurnitureHelper.FurnitureData t in _helper.FurniturePrefabs) {
 			GUILayout.Label(t.Prefab.name + " Pos: " + t.Position + " Rot: " + t.Rotation.eulerAngles);
 		}
@@ -31,7 +41,7 @@ public class FurnitureHelper_Inspector : Editor {
 		if (GUILayout.Button("Save Room")) {
 			if (_cachedPrefabInstance != null) {
 				saveFurniturePrefabs();
-				PrefabUtility.ReplacePrefab(_helper.gameObject, _cachedPrefabInstance, ReplacePrefabOptions.Default);
+				PrefabUtility.ReplacePrefab(_helper.gameObject, _cachedPrefabInstance, ReplacePrefabOptions.ConnectToPrefab);
 				PrefabUtility.DisconnectPrefabInstance(_helper.gameObject);
 				DestroyImmediate(_helper.gameObject);
 			} else {
