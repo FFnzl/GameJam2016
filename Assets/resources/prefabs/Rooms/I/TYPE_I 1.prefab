@@ -311,7 +311,7 @@ GameObject:
   - 114: {fileID: 114000010371593348}
   - 114: {fileID: 114000012174861588}
   m_Layer: 0
-  m_Name: TYPE_I
+  m_Name: TYPE_I 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -488,8 +488,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013171665022}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.17952526, y: -1.7785214, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -890,7 +890,43 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _prefabsContainer: {fileID: 1000012274898900}
-  _furniturePrefabs: []
+  _furniturePrefabs:
+  - Prefab: {fileID: 1000010509276184, guid: 10f7ecb50e6f3ba459b0dbc7aa553019, type: 2}
+    Position: {x: -0.295, y: 0.249, z: -0.017}
+    Rotation: {x: 0.032347955, y: 0.010406381, z: 0.30606776, w: 0.95140314}
+  - Prefab: {fileID: 1000011449403434, guid: 0e2d7816791cf2d468dfca0a68c82992, type: 2}
+    Position: {x: 0.303, y: 0.317, z: 0}
+    Rotation: {x: -0, y: -0, z: -0, w: 1}
+  - Prefab: {fileID: 1000011691523994, guid: d410e918753945644ad92b7647e26514, type: 2}
+    Position: {x: 0.316, y: -0.18, z: 0}
+    Rotation: {x: -0, y: -0, z: -0, w: 1}
+  - Prefab: {fileID: 1000011352293608, guid: 12bb35db153730843af71a261e29f082, type: 2}
+    Position: {x: 0.171, y: 0.298, z: 0}
+    Rotation: {x: -0, y: -0, z: -0, w: 1}
+  - Prefab: {fileID: 1000013691019120, guid: 53e337a0bc82c374bbb5e602816a3ce5, type: 2}
+    Position: {x: 0.1, y: 0.121, z: 0}
+    Rotation: {x: -0, y: -0, z: 0.32875547, w: 0.9444151}
+  - Prefab: {fileID: 1000014030006240, guid: 635112fa123b1aa42b97eb62c176611b, type: 2}
+    Position: {x: 0.168, y: -0.14, z: 0}
+    Rotation: {x: -0, y: -0, z: -0, w: 1}
+  - Prefab: {fileID: 1000010675971244, guid: af0c4ed40155991408cb397051bde463, type: 2}
+    Position: {x: -0.417, y: -0.406, z: 0}
+    Rotation: {x: -0, y: -0, z: -0, w: 1}
+  - Prefab: {fileID: 1000011235923508, guid: f55283e6838d48f489f662d02e1a83d3, type: 2}
+    Position: {x: -0.419, y: -0.037, z: 0}
+    Rotation: {x: -0, y: -0, z: -0, w: 1}
+  - Prefab: {fileID: 1000014084910022, guid: 3496843078a3c0e4383e6f4b19886787, type: 2}
+    Position: {x: -0.421, y: -0.221, z: 0}
+    Rotation: {x: -0, y: -0, z: -0, w: 1}
+  - Prefab: {fileID: 1000012903569478, guid: 3855bbdd21b4b814c9f82a2131460f17, type: 2}
+    Position: {x: -0.001525253, y: 0.0065214634, z: 0}
+    Rotation: {x: -0, y: -0, z: -0, w: 1}
+  - Prefab: {fileID: 1000010470816506, guid: 892120ce881afcf4ca8620bca38acf2a, type: 2}
+    Position: {x: -0.0822, y: 0.2015, z: -0.05}
+    Rotation: {x: 0, y: 0, z: 0.30868497, w: 0.9511644}
+  - Prefab: {fileID: 1000013276799272, guid: 7a6b23096eebc9044a3cfe1d67de3e76, type: 2}
+    Position: {x: 0.277, y: 0.22, z: 0}
+    Rotation: {x: -0, y: -0, z: -0, w: 1}
 --- !u!212 &212000010177894478
 SpriteRenderer:
   m_ObjectHideFlags: 1

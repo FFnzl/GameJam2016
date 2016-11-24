@@ -25,7 +25,7 @@ GameObject:
   - 114: {fileID: 114000011350483664}
   - 114: {fileID: 114000012088078752}
   m_Layer: 0
-  m_Name: pfb_socket
+  m_Name: pfb_furniture_socket
   m_TagString: Socket
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

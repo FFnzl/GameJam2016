@@ -24,7 +24,7 @@ GameObject:
   - 61: {fileID: 61000010367422340}
   - 114: {fileID: 114000010408657326}
   m_Layer: 10
-  m_Name: Lampe
+  m_Name: pdb_furniture_lamp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
