@@ -35,6 +35,6 @@ public class backButtonBehaviour : MonoBehaviour {
 
     public void goBack()
     {
-        SceneManager.LoadScene("MenuScene");
+        SceneManager.LoadScene("scn_menu");
     }
 }
