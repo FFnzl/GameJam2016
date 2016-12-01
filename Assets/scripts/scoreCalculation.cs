@@ -28,8 +28,8 @@ public class scoreCalculation : MonoBehaviour {
         junk = s.junkCollected;
                 
         timeScoreTxt.text = restTime.ToString();
-        roomsTxt.text = "\n" + clearedRooms.ToString() + " of " + totalRooms.ToString();
-        perfectScoreTxt.text = "\n\n" + perfects.ToString() + " of " + clearedRooms.ToString();
+        roomsTxt.text = clearedRooms.ToString() + " of " + totalRooms.ToString();
+        perfectScoreTxt.text = perfects.ToString() + " of " + clearedRooms.ToString();
 
         endScoreTxt.text = calc().ToString();
 		Destroy(s.gameObject);

@@ -24,7 +24,7 @@ public class Stats : MonoBehaviour {
         if(roomsCleared == totalRooms && !done)
         {
             done = true;
-            SceneManager.LoadScene("EndScene");
+            SceneManager.LoadScene("scn_gameover");
         }
     }
 	
