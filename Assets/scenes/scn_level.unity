@@ -327,7 +327,7 @@ ParticleSystem:
   moveWithTransform: 1
   autoRandomSeed: 1
   scalingMode: 1
-  randomSeed: 965091397
+  randomSeed: -110210086
   InitialModule:
     serializedVersion: 2
     enabled: 1
@@ -2911,6 +2911,30 @@ Prefab:
       propertyPath: follow
       value: 
       objectReference: {fileID: 1811840254}
+    - target: {fileID: 1000013396669652, guid: 28788b58c1b23ab49b81c97b76c1b5e8, type: 2}
+      propertyPath: m_Name
+      value: Minimap
+      objectReference: {fileID: 0}
+    - target: {fileID: 20000010230234022, guid: 28788b58c1b23ab49b81c97b76c1b5e8,
+        type: 2}
+      propertyPath: m_ClearFlags
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 20000010230234022, guid: 28788b58c1b23ab49b81c97b76c1b5e8,
+        type: 2}
+      propertyPath: m_BackGroundColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 20000010230234022, guid: 28788b58c1b23ab49b81c97b76c1b5e8,
+        type: 2}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 20000010230234022, guid: 28788b58c1b23ab49b81c97b76c1b5e8,
+        type: 2}
+      propertyPath: m_BackGroundColor.b
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 28788b58c1b23ab49b81c97b76c1b5e8, type: 2}
   m_IsPrefabParent: 0
@@ -3596,7 +3620,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1000013257727308, guid: c957d459ab458504bb6d6376106015dc, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c957d459ab458504bb6d6376106015dc, type: 2}

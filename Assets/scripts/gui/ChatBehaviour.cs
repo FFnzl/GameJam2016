@@ -123,8 +123,11 @@ aus = GetComponent<AudioSource>();
                 case 0:
                     if (index == 0)
                     {
-                        if (cm.UsingController == true) txt.text = tutorialPool[1];
-                        else txt.text = tutorialPool[0];
+						//if (cm.UsingController == true) txt.text = tutorialPool[1];
+						if (PlayerPrefsX.GetBool("controller"))
+							txt.text = tutorialPool[1];
+						else
+							txt.text = tutorialPool[0];
                     }
                     break;
                 case 1:

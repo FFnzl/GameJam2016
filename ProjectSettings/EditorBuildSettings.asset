@@ -6,10 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/scenes/MenuScene.unity
+    path: Assets/scenes/scn_menu.unity
   - enabled: 1
-    path: Assets/scenes/CreditsScene.unity
+    path: Assets/scenes/scn_credits.unity
   - enabled: 1
-    path: Assets/scenes/MainScene.unity
+    path: Assets/scenes/scn_level.unity
   - enabled: 1
-    path: Assets/scenes/EndScene.unity
+    path: Assets/scenes/scn_gameover.unity

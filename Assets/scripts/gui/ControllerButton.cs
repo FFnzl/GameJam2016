@@ -3,11 +3,11 @@ using System.Collections;
 
 public class ControllerButton : MonoBehaviour {
 	void Start () {
-		transform.GetChild(0).gameObject.SetActive(!FindObjectOfType<ControllerManager>().UsingController);
+		transform.GetChild(0).gameObject.SetActive(!PlayerPrefsX.GetBool("controller", false));
 	}
 
 	public void OnClick () {
-		FindObjectOfType<ControllerManager>().ToggleSetting();
-		transform.GetChild(0).gameObject.SetActive(!FindObjectOfType<ControllerManager>().UsingController);
+		PlayerPrefsX.SetBool("controller", !PlayerPrefsX.GetBool("controller"));
+		transform.GetChild(0).gameObject.SetActive(!PlayerPrefsX.GetBool("controller"));
 	}
 }

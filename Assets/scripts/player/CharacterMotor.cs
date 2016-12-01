@@ -25,7 +25,8 @@ public class CharacterMotor : MonoBehaviour {
 	}
 
 	private void Update () {
-		if (FindObjectOfType<ControllerManager>().UsingController) {
+		//if (FindObjectOfType<ControllerManager>().UsingController) {
+		if(PlayerPrefsX.GetBool("controller")) {
 			float x = Input.GetAxis("JoyHorizontal");
 			float y = Input.GetAxis("JoyVertical");
 

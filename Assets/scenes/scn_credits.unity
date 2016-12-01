@@ -250,8 +250,9 @@ GameObject:
   - 224: {fileID: 485537834}
   - 222: {fileID: 485537838}
   - 114: {fileID: 485537837}
-  - 114: {fileID: 485537836}
   - 114: {fileID: 485537835}
+  - 114: {fileID: 485537839}
+  - 114: {fileID: 485537836}
   m_Layer: 5
   m_Name: btn_back
   m_TagString: Untagged
@@ -319,8 +320,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 485537836}
-        m_MethodName: goBack
+      - m_Target: {fileID: 485537839}
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -335,16 +336,22 @@ MonoBehaviour:
 --- !u!114 &485537836
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114000010717233146, guid: b4175d1fdff6e7b45bf5ac5609d76e0d,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 485537833}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cb672815a559f04cb390ad7e7606c8a, type: 3}
+  m_Script: {fileID: 11500000, guid: 5edc50caa6e6d5545a64847588203207, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 0.425
+  _colors:
+  - {r: 0.7, g: 0, b: 0.7, a: 1}
+  - {r: 0, g: 0, b: 0.7, a: 1}
+  - {r: 0, g: 0.7, b: 0.7, a: 1}
+  - {r: 0, g: 0.7, b: 0, a: 1}
+  - {r: 0.7, g: 0.7, b: 0, a: 1}
+  - {r: 0.7, g: 0, b: 0, a: 1}
+  _duration: 0.425
 --- !u!114 &485537837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -380,6 +387,18 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 485537833}
+--- !u!114 &485537839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 485537833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b42735dfdb0e1843a5b13e1a2e2ddde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneName: scn_menu
 --- !u!1 &843933411
 GameObject:
   m_ObjectHideFlags: 0
@@ -598,16 +617,22 @@ RectTransform:
 --- !u!114 &1569244509
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114000014049212602, guid: b4175d1fdff6e7b45bf5ac5609d76e0d,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1569244507}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b286af9150dae584ea92fe1f5fc6f915, type: 3}
+  m_Script: {fileID: 11500000, guid: 12e080a7361e4174f9b1290afe32c756, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 0.425
+  _colors:
+  - {r: 0.7, g: 0, b: 0.7, a: 1}
+  - {r: 0, g: 0, b: 0.7, a: 1}
+  - {r: 0, g: 0.7, b: 0.7, a: 1}
+  - {r: 0, g: 0.7, b: 0, a: 1}
+  - {r: 0.7, g: 0.7, b: 0, a: 1}
+  - {r: 0.7, g: 0, b: 0, a: 1}
+  _duration: 0.425
 --- !u!114 &1569244510
 MonoBehaviour:
   m_ObjectHideFlags: 0

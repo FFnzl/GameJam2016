@@ -127,3 +127,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 272bca3c5ff4715478f19d4c31755990, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _menuStart: {fileID: 8300000, guid: 85721fa5e51d96840b38facf4f1dd3b8, type: 3}
+  _menuLoop: {fileID: 8300000, guid: b5a87683e8ff6764aa660c40155c8711, type: 3}
+  _gameLoop: {fileID: 8300000, guid: 052d2e138c4fa7a419fd4e83500bbc63, type: 3}

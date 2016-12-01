@@ -3,9 +3,9 @@ using System.Collections;
 using DG.Tweening;
 
 public class logoBehaviour : MonoBehaviour {
-
     [SerializeField] float duration;
-    private RectTransform rt;
+
+	private RectTransform rt;
     private Vector3 startScale;
     private bool tweening;
 

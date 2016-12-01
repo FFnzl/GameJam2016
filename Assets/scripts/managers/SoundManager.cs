@@ -15,11 +15,7 @@ public class SoundManager : MonoBehaviour {
 		}
 	}
 
-	public bool EffectsOn () {
-		float value;
-		_mixer.GetFloat("EffectVolume", out value);
-		return value > -70.0f;
-	}
+
 
 	public bool MusicOn () {
 		float value;

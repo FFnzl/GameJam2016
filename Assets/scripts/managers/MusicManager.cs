@@ -5,8 +5,13 @@ using UnityEngine.SceneManagement;
 public class MusicManager : MonoBehaviour {
 	private AudioSource _source;
 
+	[SerializeField]
 	private AudioClip _menuStart;
+
+	[SerializeField]
 	private AudioClip _menuLoop;
+
+	[SerializeField]
 	private AudioClip _gameLoop;
 
 	Coroutine _waitRoutine;
@@ -15,10 +20,6 @@ public class MusicManager : MonoBehaviour {
 		DontDestroyOnLoad(gameObject);
 
 		_source = GetComponent<AudioSource>();
-
-		_menuStart = Resources.Load<AudioClip>("sounds/maintheme_menu_start");
-		_menuLoop = Resources.Load<AudioClip>("sounds/maintheme_menu_loop");
-		_gameLoop = Resources.Load<AudioClip>("sounds/maintheme_game_loop");
 	}
 
 	private void Start () {
@@ -30,13 +31,14 @@ public class MusicManager : MonoBehaviour {
 	private string _lastScene = "";
 	private bool _firstTime = true;
 
+	//TODO Make this without strings!
 	private void LoadedLevel (Scene scene, LoadSceneMode mode) {
-		if (scene.name == "MenuScene" && _lastScene != "CreditsScene" && _lastScene != "EndScene") {
+		if (scene.name == "scn_menu" && _lastScene != "scn_credits" && _lastScene != "scn_gameover") {
 			_source.loop = false;
 			_source.clip = _menuStart;
 			_source.Play();
 			_waitRoutine = StartCoroutine(waitForFinish(_menuLoop, true));
-		} else if (scene.name == "MainScene" && _firstTime) {
+		} else if (scene.name == "scn_level" && _firstTime) {
 			_firstTime = false;
 			_source.loop = false;
 			StopCoroutine(_waitRoutine);

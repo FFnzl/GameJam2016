@@ -43,7 +43,8 @@ public class UITimeBehaviour : MonoBehaviour {
 
         if(timeLimit < 0)
         {
-            SceneManager.LoadScene("EndScene");
+			//TODO Put this somewhere else yo
+            SceneManager.LoadScene("scn_gameover");
         }
         if(timeLimit % 10 <= 1)
         {
