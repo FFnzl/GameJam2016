@@ -2,6 +2,8 @@
 using System.Collections;
 using DG.Tweening;
 using UnityEngine.UI;
+using System.Collections;
+using System.Collections.Generic;
 
 public class FurnitureBehaviour : MonoBehaviour {
     private GameObject uiText;
@@ -32,13 +34,48 @@ public class FurnitureBehaviour : MonoBehaviour {
         set { collided = value; }
     }
 
+	private List<SpriteRenderer> rend;
+
+	void Awake() {
+		rend = new List<SpriteRenderer> ();
+	}
+
 	// Use this for initialization
 	void Start () {
         Collided = false;
 		uiText = GameObject.FindGameObjectWithTag("uiTimer");
 		uiScript = uiText.GetComponent<UITimeBehaviour>();
 
+		initGreyscale ();
+
         chat = GameObject.FindGameObjectWithTag("Chat").GetComponent<ChatBehaviour>();
+	}
+
+	private void initGreyscale() {
+
+		SpriteRenderer sr = GetComponent<SpriteRenderer>();
+		Material greyscale = Resources.Load<Material>("materials/greyscale");
+
+		if (sr != null) {
+			rend.Add (sr);
+		}
+
+		rend.AddRange (GetComponentsInChildren<SpriteRenderer> ());
+
+		foreach(SpriteRenderer r in rend) {
+			r.material = greyscale;
+			r.material.SetFloat ("_EffectAmount", 1f);
+		}
+
+	}
+
+	public void handleGreyscale(float amount)
+	{
+		amount = Mathf.Min (Mathf.Max(amount, 0f) , 1f);
+
+		foreach(SpriteRenderer r in rend) {
+			r.material.SetFloat ("_EffectAmount", amount);
+		}
 	}
 
     private void OnCollisionEnter2D(Collision2D collision)

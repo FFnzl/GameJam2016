@@ -25,8 +25,10 @@ public class FloorController : MonoBehaviour {
             o.transform.parent = transform;
             o.transform.localPosition = new Vector3((((i % 10) - 5) * 0.1f) + 0.05f, (((i / 10) - 5) * -0.1f) - 0.05f);
             o.transform.localScale = new Vector3(1, 1);
-            o.GetComponent<SpriteRenderer>().sprite = fc.floors[int.Parse(pattern[i])];
-
+			SpriteRenderer osr = o.GetComponent<SpriteRenderer> ();
+			Material greyscale = Resources.Load<Material> ("materials/greyscale");
+			osr.material = greyscale;
+			osr.sprite = fc.floors[int.Parse(pattern[i])];
             r.tiles.Add(o);
         }
 	}

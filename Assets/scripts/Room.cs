@@ -21,6 +21,8 @@ public class Room : MonoBehaviour {
     private bool done = false;
     private bool perfect = true;
 
+	private float maxGreyScale = .9f;
+
     void Awake()
     {
         doors = new List<GameObject>();
@@ -60,8 +62,13 @@ public class Room : MonoBehaviour {
                 dustInPercent = 0;
             }
             else dustInPercent /= dust.Count;
+			//TODO Change to more efficient way
+			foreach (FurnitureBehaviour f in GetComponentsInChildren<FurnitureBehaviour>()) {
+				f.handleGreyscale (dustInPercent * maxGreyScale);
+			}
             tiles.ForEach((x) => {
                 SpriteRenderer sr = x.GetComponent<SpriteRenderer>();
+				sr.material.SetFloat ("_EffectAmount", dustInPercent * maxGreyScale);
                 sr.color = Color.HSVToRGB(0, 0, ((1f - dustInPercent) * 0.5f) + 0.5f);
             });
             mapIcons.ForEach((x) =>
