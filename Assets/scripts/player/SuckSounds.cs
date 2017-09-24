@@ -9,7 +9,7 @@ public class SuckSounds : MonoBehaviour {
 
 	private void Awake () {
 		_audioSource = GetComponent<AudioSource>();
-		_audioSource.clip = Resources.Load<AudioClip>("sounds/vacuum_suck");
+		_audioSource.clip = Resources.Load<AudioClip>("sounds/effects/sfx_vacuum_suck");
 		
 	}
 

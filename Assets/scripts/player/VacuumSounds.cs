@@ -10,9 +10,9 @@ public class VacuumSounds : MonoBehaviour {
 	private AudioClip _stopClip;
 
 	private void Awake () {
-		_startClip = Resources.Load<AudioClip>("sounds/vacuum_start");
-		_loopClip = Resources.Load<AudioClip>("sounds/vacuum_stop");
-		_stopClip = Resources.Load<AudioClip>("sounds/vacuum_loop");
+		_startClip = Resources.Load<AudioClip>("sounds/effects/sfx_vacuum_start");
+		_loopClip = Resources.Load<AudioClip>("sounds/effects/sfx_vacuum_loop");
+		_stopClip = Resources.Load<AudioClip>("sounds/effects/sfx_vacuum_stop");
 	}
 
 	private void Start () {
@@ -28,13 +28,13 @@ public class VacuumSounds : MonoBehaviour {
 
 	public void DisconnectedPlug () {
 		_audioSource.loop = false;
-		_audioSource.clip = _loopClip;
+		_audioSource.clip = _stopClip;
 		_audioSource.Play();
 	}
 
 	private void Update () {
 		if (!_audioSource.isPlaying && _plug.Connected) {
-			_audioSource.clip = _stopClip;
+			_audioSource.clip = _loopClip;
 			_audioSource.loop = true;
 			_audioSource.Play();
 		}
