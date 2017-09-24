@@ -39,7 +39,10 @@ public class RandomDustPlacement : MonoBehaviour {
 				Vector2 randomPos = new Vector2(Random.Range(-radius, radius), Random.Range(-radius, radius));
 				GameObject o = (Instantiate(_dustPrefab, new Vector3(randomPos.x, randomPos.y, 0.0f), Quaternion.Euler(0, 0, Random.Range(0f, 360f)), transform) as GameObject);
 				o.transform.localPosition = new Vector3(randomPos.x, randomPos.y, 0.0f);
-				o.GetComponent<SpriteRenderer>().sprite = GameObject.FindGameObjectWithTag("JunkManager").GetComponent<JunkComponents>().RandomJunk;
+				Sprite spr = GameObject.FindGameObjectWithTag ("JunkManager").GetComponent<JunkComponents> ().RandomJunk;	
+				foreach(SpriteRenderer r in o.GetComponentsInChildren<SpriteRenderer>()) {
+					r.sprite = spr;
+				}
 				/*if (room != null)*/
 				room.dust.Add(o);
 			}

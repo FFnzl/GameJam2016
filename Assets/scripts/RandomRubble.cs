@@ -6,6 +6,9 @@ public class RandomRubble : MonoBehaviour {
 	private Sprite[] _spriteSheet;
 
 	private void Start () {
-		GetComponent<SpriteRenderer>().sprite = _spriteSheet[Random.Range(0, _spriteSheet.Length)];
+		Sprite s = _spriteSheet [Random.Range (0, _spriteSheet.Length)];
+		foreach( SpriteRenderer r in GetComponentsInChildren<SpriteRenderer>()) {
+			r.sprite = s;
+		}
 	}
 }
