@@ -1,17 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Plug : MonoBehaviour {
-	public Transform CablePosition;
+public class Plug : MonoBehaviour
+{
+	public Transform CablePosition { get; private set; }
+	public DistanceJoint2D DistanceJoint { get; private set; }
+	public HingeJoint2D HingeJoint { get; private set; }
+	public Rigidbody2D Body { get; private set; }
 
-	public DistanceJoint2D DistanceJoint;
-	public HingeJoint2D HingeJoint;
+	public bool IsConnected { get; private set; }
 
-	public Rigidbody2D Body;
-	public bool Connected;
-
-    public GameObject noEnergyIcon;
-
+	[SerializeField]
+	private GameObject _noEnergyIcon;
 
 	private Socket _currentSocket;
 	private bool _onSocket;
@@ -19,7 +19,8 @@ public class Plug : MonoBehaviour {
 	private VacuumSounds _vacuumSounds;
 	private PlugSounds _plugSounds;
 
-	private void Start () {
+	private void Start()
+	{
 		Body = GetComponent<Rigidbody2D>();
 
 		DistanceJoint = GetComponent<DistanceJoint2D>();
@@ -30,52 +31,66 @@ public class Plug : MonoBehaviour {
 	}
 
 
-	public void PickUp () {
-		if (Connected) {
+	public void PickUp()
+	{
+		if (IsConnected)
+		{
 			_currentSocket.Disconnect();
-		} else {
+		}
+		else
+		{
 			_plugSounds.PickUp();
 		}
 	}
 
-	public void Drop () {
-		if (_onSocket) {
-			connect();
-		} else {
+	public void Drop()
+	{
+		if (_onSocket)
+		{
+			Connect();
+		}
+		else
+		{
 			_plugSounds.Drop();
 		}
 	}
 
-	private void connect () {
+	private void Connect()
+	{
 		_touchingSocket.ConnectPlug(this);
 		_currentSocket = _touchingSocket;
-		Connected = true;
+		IsConnected = true;
 
 		_vacuumSounds.ConnectedPlug();
 		_plugSounds.Connect();
 
-        if (noEnergyIcon != null) noEnergyIcon.SetActive(!Connected);
-    }
+		if (_noEnergyIcon != null) _noEnergyIcon.SetActive(!IsConnected);
+	}
 
-	public void Disconnect () {
+	public void Disconnect()
+	{
 		_currentSocket = null;
-		Connected = false;
+		IsConnected = false;
 
 		_vacuumSounds.DisconnectedPlug();
 		_plugSounds.Disconnect();
 
-        if (noEnergyIcon != null) noEnergyIcon.SetActive(!Connected);
-    }
+		if (_noEnergyIcon != null) _noEnergyIcon.SetActive(!IsConnected);
+	}
 
-	private void OnTriggerEnter2D (Collider2D pOther) {
-		if (pOther.tag == "Socket") {
+	private void OnTriggerEnter2D(Collider2D pOther)
+	{
+		if (pOther.tag == "Socket")
+		{
 			_onSocket = true;
 			_touchingSocket = pOther.GetComponent<Socket>();
 		}
 	}
 
-	private void OnTriggerExit2D (Collider2D pOther) {
-		if (pOther.tag == "Socket") {
+	private void OnTriggerExit2D(Collider2D pOther)
+	{
+		if (pOther.tag == "Socket")
+		{
 			_onSocket = false;
 			_touchingSocket = null;
 		}

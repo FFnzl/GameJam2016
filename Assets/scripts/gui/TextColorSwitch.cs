@@ -2,16 +2,15 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class TextColorSwitch : ColorSwitch {
+public class TextColorSwitch : ColorChanger
+{
 	private Text _text;
 
-	protected override void Start() {
-		base.Start();
-
+	protected void Start()
+	{
 		_text = GetComponent<Text>();
+		ColorGetter = () => _text.color;
+		ColorSetter = x => _text.color = x;
 	}
 
-	private void Update () {
-		_text.color = _currentColor;
-	}
 }

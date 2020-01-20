@@ -4,28 +4,29 @@ using UnityEngine.SceneManagement;
 
 
 
-public class Stats : MonoBehaviour {
+public class Stats : MonoBehaviour
+{
 
-    public int numberPerfect = 0;
-    public int roomsCleared = 0;
-    public int totalRooms = 0;
-    public int restTime = 0;
-    public int junkCollected = 0;
+	public int ClearedPerfect { get; set; }
+	public int Cleared { get; set; }
+	public int RoomsTotal { get; set; }
+	public int RemainingTime { get; set; }
+	public int JunkCollected { get; set; }
 
-    private bool done = false;
+	private bool _isDone = false;
 
-    void Awake()
-    {
-        DontDestroyOnLoad(this.gameObject);
-    }
+	void Awake()
+	{
+		DontDestroyOnLoad(this.gameObject);
+	}
 
-    void Update()
-    {
-        if(roomsCleared == totalRooms && !done)
-        {
-            done = true;
-            SceneManager.LoadScene("scn_gameover");
-        }
-    }
-	
+	void Update()
+	{
+		if (Cleared == RoomsTotal && !_isDone)
+		{
+			_isDone = true;
+			SceneManager.LoadScene("scn_gameover");
+		}
+	} 
+
 }

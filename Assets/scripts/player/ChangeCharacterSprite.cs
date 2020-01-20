@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ChangeCharacterSprite : MonoBehaviour {
+public class ChangeCharacterSprite : MonoBehaviour
+{
 	[SerializeField]
 	private Sprite _normalSprite;
 
@@ -10,15 +11,18 @@ public class ChangeCharacterSprite : MonoBehaviour {
 
 	private SpriteRenderer _renderer;
 
-	private void Start () {
+	private void Start()
+	{
 		_renderer = GetComponent<SpriteRenderer>();
 	}
 
-	public void PickUp () {
+	public void PickUp()
+	{
 		_renderer.sprite = _carrySprite;
 	}
 
-	public void Drop () {
+	public void Drop()
+	{
 		_renderer.sprite = _normalSprite;
 	}
 }

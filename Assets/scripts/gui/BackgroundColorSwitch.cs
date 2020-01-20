@@ -1,16 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BackgroundColorSwitch : ColorSwitch {
+public class BackgroundColorSwitch : ColorChanger
+{
 	private Camera _camera;
 
-	protected override void Start() {
-		base.Start();
-
+	void Start()
+	{
 		_camera = GetComponent<Camera>();
-	}
-
-	private void Update() {
-		_camera.backgroundColor = _currentColor;
+		ColorGetter = () => _camera.backgroundColor;
+		ColorSetter = x => _camera.backgroundColor = x;
 	}
 }

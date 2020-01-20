@@ -5,67 +5,73 @@ using DG.Tweening;
 using UnityEngine.SceneManagement;
 
 
-public class UITimeBehaviour : MonoBehaviour {
+public class UITimeBehaviour : MonoBehaviour
+{
 
-    private Text txt;
-    [SerializeField] private float timeLimit;
+	private Text _txt;
 
-    private ChatBehaviour chat;
+	[SerializeField]
+	private float _timeLimit;
 
-    private Color startColor;
-    private int startSize;
-    private bool changing;
-    Stats stats;
+	private ChatBehaviour _chat;
+
+	private Color _startColor;
+	private int _startSize;
+	private bool _isChanging;
+	private Stats _stats;
 
 	// Use this for initialization
-	void Start () {
-        txt = GetComponent<Text>();
-        startColor = txt.color;
-        startSize = txt.fontSize;
-        stats = GameObject.FindGameObjectWithTag("Stats").GetComponent<Stats>();
-        chat = GameObject.FindGameObjectWithTag("Chat").GetComponent<ChatBehaviour>();
+	void Start()
+	{
+		_txt = GetComponent<Text>();
+		_startColor = _txt.color;
+		_startSize = _txt.fontSize;
+		_stats = GameObject.FindGameObjectWithTag("Stats").GetComponent<Stats>();
+		_chat = GameObject.FindGameObjectWithTag("Chat").GetComponent<ChatBehaviour>();
 	}
-	
+
 	// Update is called once per frame
-	void Update () {
-        timeLimit -= Time.deltaTime;
-        txt.text = ((int)timeLimit).ToString();
-        if(timeLimit <= 20)
-        {
-            if (timeLimit <= 10) showWarning(0.25f);
-            else showWarning(0.5f);
-        } else
-        {
-            txt.color = startColor;
-            txt.fontSize = startSize;
-        }
-        stats.restTime = (int)Mathf.Max(0, timeLimit);
+	void Update()
+	{
+		_timeLimit -= Time.deltaTime;
+		_txt.text = ((int)_timeLimit).ToString();
+		if (_timeLimit <= 20)
+		{
+			if (_timeLimit <= 10) ShowWarning(0.25f);
+			else ShowWarning(0.5f);
+		}
+		else
+		{
+			_txt.color = _startColor;
+			_txt.fontSize = _startSize;
+		}
+		_stats.RemainingTime = (int)Mathf.Max(0, _timeLimit);
 
-        if(timeLimit < 0)
-        {
+		if (_timeLimit < 0)
+		{
 			//TODO Put this somewhere else yo
-            SceneManager.LoadScene("scn_gameover");
-        }
-        if(timeLimit % 10 <= 1)
-        {
-            chat.popUp(3);
-        }
+			SceneManager.LoadScene("scn_gameover");
+		}
+		if (_timeLimit % 10 <= 1)
+		{
+			_chat.PopUp(3);
+		}
 	}
 
-    public void addPunish(int n)
-    {
-        timeLimit -= n;
-    }
+	public void AddPunish(int n)
+	{
+		_timeLimit -= n;
+	}
 
-    private void showWarning(float d)
-    {
-        if (!changing)
-        {
-            changing = true;
-            DOTween.To(() => txt.color, x => txt.color = x, Color.red, d).OnComplete(() =>
-                 DOTween.To(() => txt.color, x => txt.color = x, Color.black, d));
-            DOTween.To(() => txt.fontSize, x => txt.fontSize = x, startSize * 2, d).OnComplete(() =>
-                 DOTween.To(() => txt.fontSize, x => txt.fontSize = x, startSize, d).OnComplete(() => changing = false));
-        }
-    }
+	private void ShowWarning(float d)
+	{
+		if (!_isChanging)
+		{
+			_isChanging = true;
+			DOTween.To(() => _txt.color, x => _txt.color = x, Color.red, d).OnComplete(() =>
+				 DOTween.To(() => _txt.color, x => _txt.color = x, Color.black, d));
+			DOTween.To(() => _txt.fontSize, x => _txt.fontSize = x, _startSize * 2, d).OnComplete(() =>
+				 DOTween.To(() => _txt.fontSize, x => _txt.fontSize = x, _startSize, d).OnComplete(() => _isChanging = false));
+		}
+	}
 }

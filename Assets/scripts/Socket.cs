@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Socket : MonoBehaviour {
+public class Socket : MonoBehaviour
+{
 	[SerializeField]
 	private float _plugOffset = -0.095f;
 
@@ -12,12 +13,15 @@ public class Socket : MonoBehaviour {
 
 	private FixedJoint2D _joint;
 
-	private void Start () {
+	private void Start()
+	{
 		_plugPosition = transform.GetChild(0);
 	}
 
-	public void ConnectPlug (Plug pPlug) {
-		if (_joint == null) {
+	public void ConnectPlug(Plug pPlug)
+	{
+		if (_joint == null)
+		{
 			pPlug.Body.position = _plugPosition.position;
 			pPlug.Body.rotation = _plugPosition.rotation.eulerAngles.z;
 			pPlug.Body.velocity = Vector3.zero;
@@ -32,11 +36,13 @@ public class Socket : MonoBehaviour {
 		}
 	}
 
-	public void OnJointBreak2D (Joint2D pBrokenJoint) {
+	public void OnJointBreak2D(Joint2D pBrokenJoint)
+	{
 		FindObjectOfType<Plug>().Disconnect();
 	}
 
-	public void Disconnect () {
+	public void Disconnect()
+	{
 		OnJointBreak2D(_joint);
 		Destroy(_joint);
 	}

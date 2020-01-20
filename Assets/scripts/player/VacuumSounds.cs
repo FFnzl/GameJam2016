@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class VacuumSounds : MonoBehaviour {
+public class VacuumSounds : MonoBehaviour
+{
 	private Plug _plug;
 	private AudioSource _audioSource;
 
@@ -9,31 +10,37 @@ public class VacuumSounds : MonoBehaviour {
 	private AudioClip _loopClip;
 	private AudioClip _stopClip;
 
-	private void Awake () {
+	private void Awake()
+	{
 		_startClip = Resources.Load<AudioClip>("sounds/vacuum_start");
 		_loopClip = Resources.Load<AudioClip>("sounds/vacuum_stop");
 		_stopClip = Resources.Load<AudioClip>("sounds/vacuum_loop");
 	}
 
-	private void Start () {
+	private void Start()
+	{
 		_audioSource = GetComponent<AudioSource>();
 		_plug = FindObjectOfType<Plug>();
 	}
 
-	public void ConnectedPlug () {
+	public void ConnectedPlug()
+	{
 		_audioSource.loop = false;
 		_audioSource.clip = _startClip;
 		_audioSource.Play();
 	}
 
-	public void DisconnectedPlug () {
+	public void DisconnectedPlug()
+	{
 		_audioSource.loop = false;
 		_audioSource.clip = _loopClip;
 		_audioSource.Play();
 	}
 
-	private void Update () {
-		if (!_audioSource.isPlaying && _plug.Connected) {
+	private void Update()
+	{
+		if (!_audioSource.isPlaying && _plug.IsConnected)
+		{
 			_audioSource.clip = _stopClip;
 			_audioSource.loop = true;
 			_audioSource.Play();

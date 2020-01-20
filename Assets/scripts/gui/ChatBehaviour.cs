@@ -3,7 +3,8 @@ using System.Collections;
 using UnityEngine.UI;
 using DG.Tweening;
 
-public class ChatBehaviour : MonoBehaviour {
+public class ChatBehaviour : MonoBehaviour
+{
 
     public RectTransform _visiblePoint;
     public RectTransform _invisiblePoint;
@@ -20,7 +21,7 @@ public class ChatBehaviour : MonoBehaviour {
     private string[] tutorialPool =
     {
         "Use E to grab and plug the plug!",
-        "Use A to grab and plug the plug!" 
+        "Use A to grab and plug the plug!"
     };
 
     private string[] annoyedPool =
@@ -31,15 +32,15 @@ public class ChatBehaviour : MonoBehaviour {
         "Be more careful!",
         "Why did you do that!?",
         "That escalated quickly...",
-		"Well, that sucked..."
+        "Well, that sucked..."
     };
 
     private string[] happyPool =
     {
         "Groovy!",
-		"Splendid!",
+        "Splendid!",
         "Incredible!",
-		"Wow!",
+        "Wow!",
         "Better than I expected!",
         "You got the SWAG!",
         "MO-MO-MO-MO-MONSTERKILL!!!"
@@ -53,23 +54,25 @@ public class ChatBehaviour : MonoBehaviour {
         "My back hurts!",
         "Be careful with your cable!",
         "Keep an eye on the mini map!",
-		"Don't forget the plug!"
+        "Don't forget the plug!"
     };
 
-    void Awake() {
-aus = GetComponent<AudioSource>();
+    void Awake()
+    {
+        aus = GetComponent<AudioSource>();
     }
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         rt = GetComponent<RectTransform>();
         txt = GetComponentInChildren<Text>();
         cm = FindObjectOfType<ControllerManager>();
         yPos = -rt.rect.size.y;
         tweening = false;
-        popUp(0,0);
-        
-	}
+        PopUp(0, 0);
+
+    }
 
     /// <summary>
     /// First parameter determines the choosen Textpool
@@ -80,7 +83,7 @@ aus = GetComponent<AudioSource>();
     /// 
     /// Second parameter determines which message you get TUTORIAL ONLY
     /// </summary>
-    public void popUp(int mood)
+    public void PopUp(int mood)
     {
         if (!tweening)
         {
@@ -111,7 +114,7 @@ aus = GetComponent<AudioSource>();
         }
     }
 
-    public void popUp(int mood, int index)
+    public void PopUp(int mood, int index)
     {
         if (!tweening)
         {
@@ -123,11 +126,11 @@ aus = GetComponent<AudioSource>();
                 case 0:
                     if (index == 0)
                     {
-						//if (cm.UsingController == true) txt.text = tutorialPool[1];
-						if (PlayerPrefsX.GetBool("controller"))
-							txt.text = tutorialPool[1];
-						else
-							txt.text = tutorialPool[0];
+                        //if (cm.UsingController == true) txt.text = tutorialPool[1];
+                        if (PlayerPrefsX.GetBool("controller"))
+                            txt.text = tutorialPool[1];
+                        else
+                            txt.text = tutorialPool[0];
                     }
                     break;
                 case 1:

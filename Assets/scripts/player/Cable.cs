@@ -1,20 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Cable : MonoBehaviour {
-	private  DistanceJoint2D _distanceJoint;
-	public DistanceJoint2D DistanceJoint { get { return _distanceJoint; } }
-	private HingeJoint2D _hingeJoint;
-	public HingeJoint2D HingeJoint { get { return _hingeJoint; } }
-	private Rigidbody2D _rigidBody;
-	public Rigidbody2D RigidBody { get { return _rigidBody; } }
+public class Cable : MonoBehaviour
+{
+	public DistanceJoint2D DistanceJoint { get; private set; }
+	public HingeJoint2D HingeJoint { get; private set; }
+	public Rigidbody2D RigidBody { get; private set; }
 
 	public Transform UpperConnector;
 	public Transform LowerConnector;
 
-	private void Awake () {
-		_distanceJoint = GetComponent<DistanceJoint2D>();
-		_hingeJoint = GetComponent<HingeJoint2D>();
-		_rigidBody = GetComponent<Rigidbody2D>();
+	private void Awake()
+	{
+		DistanceJoint = GetComponent<DistanceJoint2D>();
+		HingeJoint = GetComponent<HingeJoint2D>();
+		RigidBody = GetComponent<Rigidbody2D>();
 	}
 }

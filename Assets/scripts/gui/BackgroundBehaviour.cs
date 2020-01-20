@@ -2,30 +2,15 @@
 using System.Collections;
 using DG.Tweening;
 
-public class BackgroundBehaviour : MonoBehaviour {
+public class BackgroundBehaviour : ColorChanger
+{
 
-    private Color[] colors = { new Color(0.7f, 0, 0.7f), new Color(0, 0, 0.7f),
-                               new Color(0, 0.7f, 0.7f), new Color(0, 0.7f, 0),
-                               new Color(0.7f, 0.7f, 0), new Color(0.7f, 0, 0)};
-    private Camera cam;
-    public float duration;
-    private int colorInc;
-    private bool tweening = false;
+	private Camera _camera;
 
-    // Use this for initialization
-    void Start () {
-        cam = GetComponent<Camera>();    
-    }
-	
-	// Update is called once per frame
-	void Update () {
-        if (!tweening) changeColor();
-    }
-
-    private void changeColor()
-    {
-        tweening = true;
-        DOTween.To(() => cam.backgroundColor, x => cam.backgroundColor = x, colors[colorInc], duration).OnComplete(() => tweening = false);
-        colorInc = ++colorInc % colors.Length;
-    }
+	void Start()
+	{
+		_camera = GetComponent<Camera>();
+		ColorGetter = () => _camera.backgroundColor;
+		ColorSetter = x => _camera.backgroundColor = x;
+	}
 }

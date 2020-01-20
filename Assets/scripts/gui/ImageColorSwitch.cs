@@ -2,16 +2,14 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class ImageColorSwitch : ColorSwitch {
+public class ImageColorSwitch : ColorChanger
+{
 	private Image _image;
 
-	protected override void Start() {
-		base.Start();
-
+	protected void Start()
+	{
 		_image = GetComponent<Image>();
-	}
-
-	private void Update() {
-		_image.color = _currentColor;
+		ColorGetter = () => _image.color;
+		ColorSetter = x => _image.color = x;
 	}
 }

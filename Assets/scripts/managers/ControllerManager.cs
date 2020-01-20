@@ -1,20 +1,25 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ControllerManager : MonoBehaviour {
-	public bool UsingController = false;
+public class ControllerManager : MonoBehaviour
+{
+	public bool IsUsingController = false;
 
-	private void Awake () {
+	private void Awake()
+	{
 		DontDestroyOnLoad(gameObject);
 	}
 
-	private void Start () {
-		if (FindObjectsOfType<MusicManager>().Length > 1) {
+	private void Start()
+	{
+		if (FindObjectsOfType<MusicManager>().Length > 1)
+		{
 			Destroy(gameObject);
 		}
 	}
 
-	public void ToggleSetting () {
-		UsingController = !UsingController;
+	public void ToggleSetting()
+	{
+		IsUsingController = !IsUsingController;
 	}
 }

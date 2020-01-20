@@ -1,20 +1,23 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DoorController : MonoBehaviour {
+public class DoorController : MonoBehaviour
+{
 
-    Rigidbody2D rb;
+	private Rigidbody2D _body;
 
-    public bool startLocked = false;
+	[SerializeField]
+	private bool _startLocked = false;
 
 	// Use this for initialization
-	void Start () {
-        rb = GetComponent<Rigidbody2D>();
-        rb.freezeRotation = startLocked;
+	void Start()
+	{
+		_body = GetComponent<Rigidbody2D>();
+		_body.freezeRotation = _startLocked;
 	}
-    
-    void unlock()
-    {
-        rb.freezeRotation = false;
-    }
+
+	void Unlock()
+	{
+		_body.freezeRotation = false;
+	}
 }

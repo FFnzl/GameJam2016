@@ -2,35 +2,41 @@
 using System.Collections;
 using UnityEngine.Audio;
 
-public class MuteButton : MonoBehaviour {
+public class MuteButton : MonoBehaviour
+{
 	[SerializeField]
 	private AudioMixer _mixer;
 
 	[SerializeField]
 	private string _volumeParameter;
 
-	private void Start() {
-		transform.GetChild(0).gameObject.SetActive(!groupOn());
+	private void Start()
+	{
+		transform.GetChild(0).gameObject.SetActive(!GroupOn());
 	}
 
-	public void OnClick() {
-		toggleGroup();
-		transform.GetChild(0).gameObject.SetActive(!groupOn());
+	public void OnClick()
+	{
+		ToggleGroup();
+		transform.GetChild(0).gameObject.SetActive(!GroupOn());
 	}
 
-	private bool groupOn() {
-		float value;
-		_mixer.GetFloat(_volumeParameter, out value);
+	private bool GroupOn()
+	{
+		_mixer.GetFloat(_volumeParameter, out float value);
 		return value > -70.0f;
 	}
 
-	private void toggleGroup() {
-		float value;
-		_mixer.GetFloat(_volumeParameter, out value);
+	private void ToggleGroup()
+	{
+		_mixer.GetFloat(_volumeParameter, out float value);
 
-		if (value > -70.0f) {
+		if (value > -70.0f)
+		{
 			_mixer.SetFloat(_volumeParameter, -80.0f);
-		} else {
+		}
+		else
+		{
 			_mixer.SetFloat(_volumeParameter, 0.0f);
 		}
 	}

@@ -1,22 +1,33 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class FloorComponents : MonoBehaviour {
+public class FloorComponents : MonoBehaviour
+{
 
-    public string[] floorPattern;
-    public Sprite[] floors;
+	[SerializeField]
+	private string[] _floorPattern;
 
-    public GameObject floorPrefab;
-    public GameObject textPrefab;
+	[SerializeField]
+	private Sprite[] _floors;
 
-    public Sprite RandomSprite
-    {
-        get { return floors.Length > 0 ? floors[Random.Range(0, floors.Length)] : null; }
-    }
+	[SerializeField]
+	private GameObject _floorPrefab;
 
-    public string RandomPattern
-    {
-        get { return floorPattern.Length > 0 ? floorPattern[Random.Range(0, floorPattern.Length)] : null; }
-    }
+	[SerializeField]
+	private GameObject _textPrefab;
+
+	public GameObject FloorPrefab => _floorPrefab;
+	public GameObject TextPrefab => _textPrefab;
+	public Sprite[] Floors => _floors;
+
+	public Sprite RandomSprite
+	{
+		get { return _floors.Length > 0 ? _floors[Random.Range(0, _floors.Length)] : null; }
+	}
+
+	public string RandomPattern
+	{
+		get { return _floorPattern.Length > 0 ? _floorPattern[Random.Range(0, _floorPattern.Length)] : null; }
+	}
 
 }

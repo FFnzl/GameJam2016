@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlugSounds : MonoBehaviour {
+public class PlugSounds : MonoBehaviour
+{
 	private AudioSource _audioSource;
 
 	private AudioClip _plugSound;
@@ -9,7 +10,8 @@ public class PlugSounds : MonoBehaviour {
 	private AudioClip _pickupSound;
 	private AudioClip _dropSound;
 
-	private void Awake () {
+	private void Awake()
+	{
 		_audioSource = GetComponent<AudioSource>();
 
 		_plugSound = Resources.Load<AudioClip>("sounds/vacuum_plug");
@@ -18,22 +20,26 @@ public class PlugSounds : MonoBehaviour {
 		_dropSound = Resources.Load<AudioClip>("sounds/plug_drop");
 	}
 
-	public void Drop () {
+	public void Drop()
+	{
 		_audioSource.clip = _dropSound;
 		_audioSource.Play();
 	}
 
-	public void PickUp () {
+	public void PickUp()
+	{
 		_audioSource.clip = _pickupSound;
 		_audioSource.Play();
 	}
 
-	public void Connect () {
+	public void Connect()
+	{
 		_audioSource.clip = _plugSound;
 		_audioSource.Play();
 	}
 
-	public void Disconnect () {
+	public void Disconnect()
+	{
 		_audioSource.clip = _unplugSound;
 		_audioSource.Play();
 	}

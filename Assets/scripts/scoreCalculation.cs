@@ -2,52 +2,62 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class scoreCalculation : MonoBehaviour {
+public class ScoreCalculation : MonoBehaviour
+{
 
-    [SerializeField] Text perfectScoreTxt;
-    [SerializeField] Text timeScoreTxt;
-    [SerializeField] Text roomsTxt;
-    [SerializeField] Text endScoreTxt;
-    GameObject stats;
+	[SerializeField]
+	private Text _perfectScoreTxt;
 
-    private int perfects;
-    private int clearedRooms;
-    private int totalRooms;
-    private int restTime;
-    private int junk;
+	[SerializeField]
+	private Text _timeScoreTxt;
 
-    // Use this for initialization
-    void Start () {
-        stats = GameObject.FindGameObjectWithTag("Stats");
-        Stats s = stats.GetComponent<Stats>();
+	[SerializeField]
+	private Text _roomsTxt;
 
-        restTime = s.restTime;
-        totalRooms = s.totalRooms;
-        clearedRooms = s.roomsCleared;
-        perfects = s.numberPerfect;
-        junk = s.junkCollected;
-                
-        timeScoreTxt.text = restTime.ToString();
-        roomsTxt.text = clearedRooms.ToString() + " of " + totalRooms.ToString();
-        perfectScoreTxt.text = perfects.ToString() + " of " + clearedRooms.ToString();
+	[SerializeField]
+	private Text _endScoreTxt;
 
-        endScoreTxt.text = calc().ToString();
+	private GameObject _stats;
+
+	private int _perfects;
+	private int _clearedRooms;
+	private int _totalRooms;
+	private int _restTime;
+	private int _junk;
+
+	// Use this for initialization
+	void Start()
+	{
+		_stats = GameObject.FindGameObjectWithTag("Stats");
+		Stats s = _stats.GetComponent<Stats>();
+
+		_restTime = s.RemainingTime;
+		_totalRooms = s.RoomsTotal;
+		_clearedRooms = s.Cleared;
+		_perfects = s.ClearedPerfect;
+		_junk = s.JunkCollected;
+
+		_timeScoreTxt.text = _restTime.ToString();
+		_roomsTxt.text = _clearedRooms.ToString() + " of " + _totalRooms.ToString();
+		_perfectScoreTxt.text = _perfects.ToString() + " of " + _clearedRooms.ToString();
+
+		_endScoreTxt.text = Calc().ToString();
 		Destroy(s.gameObject);
 	}
 
-    private int calc()
-    {
-        int result;
+	private int Calc()
+	{
+		int result;
 
-        result =
-            restTime * 100 +
-            clearedRooms * 1000 +
-            perfects * 1000 +
-            junk * 5;
+		result =
+			_restTime * 100 +
+			_clearedRooms * 1000 +
+			_perfects * 1000 +
+			_junk * 5;
 
-        if (totalRooms == clearedRooms) result += 5000;
+		if (_totalRooms == _clearedRooms) result += 5000;
 
-        return result;
-    }
+		return result;
+	}
 
 }
